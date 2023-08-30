@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------------------------------------- Let shift or Right Shift
+
+1) left shift 
+
+5 << 1 
+please shift 5 one time
+so 5 => 000000000000000000000000000101
+so one time shifting left = 000000000000000000000000001010 ==> 1010 => 10
+
+
+another example => 3<<2
+
+so 3 => 11 => 00000000000000011 (all 0 are close to binary number - 32)
+so 2 times shifting = 00000000000001100 => 1100 => 12 
+
+
+did you notice that we are multiplying by 2 here 
+so is it true -----> ummmm kinda yea but not for all cases
+
+for example if we have number like this  010000.....0010 << 1
+
+now if we will shift to left we will see 100000.....0100
+now notice that first value is 1 which indicates it is nagitive number 😮
+
+
+
+2) Right shift 
+
+15 >> 1
+
+15 => 1111 => 00000....0001111 => 00000....0000111 (1 shift to right side and nothing was there in right side so it disappera) => 0111 => 7 
+
+another example
+15 >> 2
+
+15 => 1111 => 00000....0001111 => 00000....0000111 (2 shift to right side and nothing was there in right side so it disappera) => 0011 => 3
+
+
+did you notice that here we are divding by 2
+
