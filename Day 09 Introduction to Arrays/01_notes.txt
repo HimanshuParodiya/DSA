@@ -1,0 +1,12 @@
+Array :- collection of same data type in one variable
+
+
+// - array Declaration
+
+int myArray[10] => there is an array of 10 values, which is named myArray
+
+
+assume ---> int myArray[5] = [1,2,3,4,5]
+myArray[1] = 2
+myArray is showing me the base address(let assume 100) and [1] is 4x1 (4 is data type and 1 is index value) so now we will get 104 and it will print the value at address 104
+so the array name is give us the address of first's (0th) address 

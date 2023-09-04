@@ -1,0 +1,11 @@
+arr[start] = 1
+arr[end] = 10
+
+arr[start] = 0001 ^ 1010
+arr[start] = 1011
+
+arr[end] = 1011 ^ 1010
+arr[end] = 0001
+
+arr[start] = 1011 ^ 0001
+arr[start] = 1010
