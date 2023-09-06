@@ -10,6 +10,7 @@ int uniqueInArray(int arr[], int size)
     for (int i = 0; i < size; i++)
     {
         ans = ans ^ arr[i];
+        cout << ans << " ";
     }
 
     return ans;
@@ -39,8 +40,8 @@ int uniqueInArray(int arr[], int size)
 
 int main()
 {
-    int myArray[] = {1, 2, 3, 5, 3, 1, 4, 4};
+    int myArray[] = {1, 2, 3, 3, 1, 4, 4};
     int sizeOfArray = sizeof(myArray) / sizeof(myArray[0]);
-    uniqueInArray(myArray, sizeOfArray);
+    cout << uniqueInArray(myArray, sizeOfArray);
     return 0;
 }
