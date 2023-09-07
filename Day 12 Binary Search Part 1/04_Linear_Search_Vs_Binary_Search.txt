@@ -1,0 +1,46 @@
+Linear Search Vs Binary Search 
+
+1) Linear Search
+
+    if we have 1000 value than the worst case(BigO N) can be 1000 comparison.
+
+2) Binary Search
+
+    if we have 1000 value which is shorted than the first time it get 500 then 250 then 125 then 62 then 31 then 15 then 7 then 3 then 1 then 0
+    total = 1000,500,250,125,62,31,15,7,3,1 = 10 comparison
+
+
+
+
+
+
+complexity of logn ==== 
+
+In the context of data structures and algorithms (DSA), you are more likely to encounter and use logarithm base 2, which is often denoted as log2
+
+
+To approximate log2(1000) manually, you can use the following method. We'll use successive approximations:
+
+Start with an initial approximation, let's say x = 9.
+
+Calculate 2^x:
+2^9 = 512
+
+Check if the result is greater or smaller than 1000. In this case, 512 is smaller than 1000.
+
+To get closer to 1000, increase x by 1:
+x = 10
+
+Calculate 2^x:
+2^10 = 1024
+
+Now, check if the result is greater or smaller than 1000. In this case, 1024 is greater than 1000.
+
+To get a closer approximation, we need to refine it further. We can use linear interpolation to estimate the fraction of the step needed to reach 1000.
+
+Fraction = (1000 - 512) / (1024 - 512) = 488 / 512 ≈ 0.953
+
+Add this fraction to the current value of x:
+x = 10 + 0.953 ≈ 10.953
+
+So, manually approximating log2(1000) using this method gives us approximately 10.953. This is a relatively close approximation to the actual value of log2(1000), which is approximately 9.966.  

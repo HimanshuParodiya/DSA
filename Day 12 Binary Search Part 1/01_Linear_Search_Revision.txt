@@ -1,0 +1,12 @@
+1) Linear Search 
+
+    let say we have an array = [3,4,6,7,8,-2]
+    and we have to find 2 in this array 
+
+    so what we will do we will create a loop and iterate each element of an array and check if that element is equal to 2 
+    here time complexity will be O(n)
+
+    so we are working fine here even time complexity is good.
+    so, what is the need of binary search. 
+
+    lets see.

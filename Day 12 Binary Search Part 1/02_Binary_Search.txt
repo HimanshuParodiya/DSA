@@ -1,0 +1,36 @@
+1) Binary Search
+
+
+    [1,2,3,4,5] key(find) = 4
+
+    steps----
+ Imp   i) while working with the binary search keep one thing in mind that "Binary Search is applied only on the Monotonic functions".
+            Monotonic functions = Value should either be in increaseing order or decreaseing.
+       ii)  Find the mid element (in our case 3)
+       iii) compare mid element with our key if mid == key then okay else if mid < key then again find the mid of the further element because mid < key.
+       iv) now again find the mid of remaining elements (mid = (startingindex + endindex) / 2) = (mid = (3+4)/2) (3.5 = 3 in case of int) now mid is at 3 index is 4. now again check if mid = key now yess
+
+
+
+
+
+
+       1 2 43 6 57 878 98 45 4 3
+
+       1, 2, 3, 4, 6, 43, 45, 57, 98, 878 , 889
+
+       find 57
+
+       mid = (0 + 10)/2 = 5 ----- 5th index = 43
+
+       if mid < key 
+
+       now find mid in 45 57 98 878 
+       index of 45 is 6 
+       and 878 is 10
+
+       mid = (6 + 10) / 2 = 16/2 = 8 --- 8th index = 98
+
+        45 57 98
+        mid is 57 
+        mid == key === ans
