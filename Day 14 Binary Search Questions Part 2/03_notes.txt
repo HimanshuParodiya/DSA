@@ -1,0 +1,14 @@
+When we now that answer is between this range that is called search space.
+
+
+example 
+
+squareRoot of 27 will be between 0...........27 so ........ is space called search space 
+
+
+
+
+
+
+Wikipedia
+search space the feasible region defining the set of all possible solutions.
