@@ -88,3 +88,7 @@ now how to approach the problem with this
 
 6) how much memory will any algorithm take?
     here we look for variable and arr vector etc
+
+
+best case time Complexity = O(1) // This occurs when the target element is found at the middle of the array in the first comparison
+worst case time Complexity = O(log₂(n)) // n = number of element  worst case  it's not in the list

@@ -1,0 +1,52 @@
+Selection sort 
+
+    array = {2,7,4,8,9,1};
+
+    sorted array = {1,2,4,7,8,9}; it could be in increasing order or decreasing order
+
+
+1) So What is Selection Sort 
+        So here we just have to play different rounds because there are so many rounds/passes.
+        and in each round what we do is find the smallest element and place it right place.
+
+
+Now let's see an example of that:-
+
+        We have an array = [64,25,12,22,11]
+
+        so first we will do round 1
+            in starting i is at 0th position (64)
+
+            Round 1) Then I will place the smallest value of an array at the 0th position.
+                     so the smallest value is 11, I swap the 0th element (64) with the smallest element (11)
+                     array become = [11,25,12,22,64]
+
+            Round 2) Now I will increase and reach the 1st position and now I will find the smallest value from the 1st element(25) to n - 1 which is 12
+                     now again I will swap the 1st element(25) with the smallest (12).
+                     array become = [11,12,25,22,64]
+
+            Round 3) Now I will increase and reach the 2nd position and now I will find the smallest value from the 2nd element(25) to n - 1 which is 22
+                     now again I will swap the 2nd element(25) with the smallest (22).
+                     array become = [11,12,22,25,64]
+
+            Round 4) Now I will increase and reach the 3rd position and now I will find the smallest value from the 3rd element(25) to n - 1 which is 25
+                     now again I will swap the 3rd element(25) with the smallest (25).
+                     array become = [11,12,22,25,64]
+
+            Round 5) Now this round is not needed because there is nothing to check after the last element ;
+
+            Total round = n - 1;
+
+
+Now let's see what will be the Time Complexity of this algorithm 
+    function 
+        function 
+
+Time Complexity = O(n^2);
+
+2) best case time Complexity = O(n^2) // we can check wether it is sorted or not
+worst case time Complexity = O(n^2) 
+
+3) useCase = i) array/vector/list size is small 
+
+so this was about selection sort 
