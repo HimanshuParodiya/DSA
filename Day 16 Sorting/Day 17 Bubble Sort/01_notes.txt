@@ -1,0 +1,14 @@
+Bubble sort
+
+    in the Bubble sort elements are compared in pairs specifically comparing adjacent elements in the list or array 
+
+    Here's a brief overview of how Bubble Sort works:
+
+1) Start from the beginning of the list (or array).
+2) Compare the first two elements.
+3) If they are in the wrong order, swap them.
+4) Move to the next pair of elements (the second and third elements) and repeat the comparison and swapping if necessary.
+5) Continue this process, comparing and swapping adjacent elements, until you reach the end of the list.
+6) After one pass through the list, the largest (or smallest, depending on the sorting order) element will have "bubbled up" to the end of the list.
+7) Repeat steps 1 to 6 for the remaining unsorted portion of the list (excluding the already sorted elements).
+8) Continue this process until no more swaps are needed, which indicates that the list is fully sorted.
