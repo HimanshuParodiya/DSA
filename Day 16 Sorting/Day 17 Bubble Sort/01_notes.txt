@@ -12,3 +12,12 @@ Bubble sort
 6) After one pass through the list, the largest (or smallest, depending on the sorting order) element will have "bubbled up" to the end of the list.
 7) Repeat steps 1 to 6 for the remaining unsorted portion of the list (excluding the already sorted elements).
 8) Continue this process until no more swaps are needed, which indicates that the list is fully sorted.
+
+
+
+Time Complexity
+    best case O(n);
+    worst case O(n^2)
+
+Space Complexity
+    O(1)
