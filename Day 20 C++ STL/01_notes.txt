@@ -1,0 +1,46 @@
+C++ STL stands for Standard Template Library 
+
+    Which has built-in algorithms and Data Structure
+    Example:- vectors, lists, queues, and stacks
+    And sorting, searching, and manipulating data
+
+So we can say 
+C++ STL is divided into Algorithms and Containers.
+
+1) Container
+    container is also divided into 4 sections 
+        1) Sequence Container:- Array, Vector, deque(double-ended queue), List and forward list.
+        2) Adaptors Container:- Stack, Queue, Priority Queue.
+        3) Associative Container:- Set, Map, MultiSet, MultiMap. 
+        4) UnOrdered Associative:- UnOrdered Set, UnOrdered  Map, UnOrdered MultiSet, UnOrdered  MultiMap. 
+       
+2) Algorithms
+    1) Binary Search 
+    2) Lower/Upper Bound
+    3) min/max
+    4) reverse/rotate
+    5) sort/swap etc
+
+
+///////////////////////////////////////// Data Structures
+
+1) Array = In the array, we can use (at), (empty), (front), (back) etc.
+2) Vector = In the vector, we can use (capacity), (size), (front), (back), (at),(begin),(end),(insert) etc.
+3) Deque(Double-Ended Queue) = We can push back and push front and also pop back and front.
+4) Stack = First in last out; 
+5) Queue = First in First out
+5) Priority Queue = Here, the first element always will be the greatest
+6) Set = Contain Unique element 
+7) Map = Store value in the form of Key and value
+
+//////////////////////////////////////// Algorithms
+
+
+sort
+binary_search
+lower_bound
+upper_bound
+rotate
+reverse
+swap
+min/max
