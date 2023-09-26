@@ -1,0 +1,7 @@
+Char a = 'h';
+String a = "What";
+
+
+
+////////////////////////////////////////////////////// Array of Char
+char ch[10] = Array of character of length 10
