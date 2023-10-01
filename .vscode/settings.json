@@ -46,6 +46,7 @@
     },
     "C_Cpp.errorSquiggles": "disabled",
     "cSpell.words": [
+        "cout",
         "Deque"
     ]
 }

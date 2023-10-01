@@ -1,0 +1,27 @@
+1) Creation of the 2D arrays
+    int arr[row][col]
+    int arr[3][3]
+
+
+2) input
+    a) in the case of a 1D array, we do like 
+
+    int arr[5];
+    int size = sizeof(arr) / sizeof(arr[0]);
+        cin >> arr[i];
+
+    b) in the case of a 2D array, we do like
+     int arr[5];
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cin >> arr[i][j];
+
+
+
+2) output
+    a) in the case of a 1D array, we do like 
+
+        cout << arr[i];
+
+    b) in the case of a 2D array, we do like
+     int arr[5][4];
+    cout << arr[i][j];
