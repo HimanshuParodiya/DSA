@@ -1,0 +1,3 @@
+Here we will learn about basic math in DSA
+
+    which will helps us to optimize our code 
