@@ -1,0 +1,54 @@
+GCD or we can say HCF
+
+GCD of 24 and 72 will be
+24 = 2 x 2 x 2 x 3
+72 = 2 x 2 x 2 x 3 x 3
+
+HCF/GCD = 2 x 2 x 2 x 3 = 24
+
+
+so yeah that was it 
+
+now we have the formula for it 
+
+GCD(a,b) = GCD(a-b,b)
+or
+GCD(a,b) = GCD(a%b,b)
+
+
+let's see the same example with the formula
+
+GCD(72,24) = GCD(48,24)
+GCD(48,24) = GCD(24,24)
+GCD(24,24) = GCD(0,24) now one of them is 0 so the remaining value will be GCD
+answer = 24
+
+now with GCD(a,b) = GCD(a%b,b)
+GCD(72,24) = GCD(72%24,24)
+GCD(24,0) = GCD(0,24)
+
+-----------------------------------------------------------------------------------------------------------------------
+let's try another example
+
+42,56
+first, let's do with the basic method
+
+42 = 2 x 3 x 7
+56 = 2 x 2 x 2 x 7 
+
+HCF/GCD = 2 x 7 = 14
+
+now let's try the formula
+
+
+GCD(56,42) = GCD(14,42)
+GCD(56,42) = GCD(14,42) Now if we - 42 with 14 and will be in -ve the minimum will be ans 14
+answer = 24
+
+a will become the previous value of b and b will become the result module of a%b
+
+
+
+
+
+
