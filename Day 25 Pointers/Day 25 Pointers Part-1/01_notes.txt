@@ -1,0 +1,22 @@
+1) Why do we need Pointers?
+
+Before that let's recap 
+
+when we do int num = 5;
+
+that means at some address 5 is getting stored and whenever we want to do something we will work with his address
+
+but we do cout<<num;
+
+so how does num is mapped with it's address
+
+so the answer is in memory we have Symbol Table 
+
+Symbol Table --> Important Data Structure Created and Maintained by the compiler to keep track of the variable. 
+so in our case, the num will mapped with its memory's address
+
+// To check the address we have address operator --> & 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Now Pointers comes in the role
