@@ -1,0 +1,23 @@
+Modular
+if we module a with n ==> a%n ==> so our output will be lies between 0 to n-1
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+"Basic" arithmetic
+First off, some important identities about the modulo operator:
+
+(a % m) + ( b % m) % m = (a+b)  % m
+(a % m) − (b % m) % m = (a−b)  % m
+(a % m) ⋅ (b % m) % m = (a⋅b)  % m
+
+
+Sometimes interviewer or anyone(Even in competitive Programming) can ask us to print your in the form of 10 power9 + 7 ==> 10^9 + 7
+
+Question => so why do they ask to print answers in this form 
+Answer => On Day 8 file number 7 we are printing factorial but there we are using 2 long what if we use int instead of 2 long now print factorial of 20 
+so the answer will exceed the limit of int. 
+
+So to get rid of the overflow we can use mod and ask them to print the answer in the form 10^9 + 7 
+
+i) (a+b) % m = a%m + b%m
+ii) (a-b) % m = a%m - b%m
+iii) (a x b) % m = a%m x b%m

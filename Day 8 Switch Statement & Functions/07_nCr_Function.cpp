@@ -2,10 +2,10 @@
 #include <iostream>
 using namespace std;
 
-int factorial(int a)
+long long factorial(int a)
 {
     int i = 1;
-    int fact = 1;
+    long long fact = 1;
     while (i <= a)
     {
         fact *= i;
@@ -33,7 +33,12 @@ int nCr()
 int main()
 {
 
-    int answer = nCr();
-    cout << answer;
+    // nCr Formula
+    // int answer = nCr();
+    // cout << answer;
+
+    // Factorial ans
+    long long ans = factorial(20);
+    cout << ans; // i have to use long long to print the result for factorial of 20
     return 0;
 }
