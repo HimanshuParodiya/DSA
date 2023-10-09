@@ -20,3 +20,46 @@ so in our case, the num will mapped with its memory's address
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Now Pointers comes in the role
+
+So we need Pointers to store the memory address of another variable and allow us to access or manipulate the data stored at that memory location.
+
+int i = 5;
+I have 5 at the address of 100
+
+int *ptr = &i
+now ptr stores the address of i which is 100
+
+int *ptr create a pointer and pass the address of i
+
+int *ptr Now this int is related to the data type of I (if i is char then instead of int we will use char)
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////// Type of Pointers
+There are different types of pointers in C++, and they are as follows:
+• Null Pointers
+• Double Pointers
+• Void Pointers
+• Wild Pointers
+• Dangling Pointer
+
+
+
+1) Null Pointers
+
+int *ptr = Null or int *ptr = 0; both are same 
+
+
+2) Double Pointers 
+pointer of pointer 
+
+int a = 10;
+int *p = &a;
+int **q = &p;
+
+Here q is a pointer to a pointer, i.e., a double-pointer, as indicated by **.
