@@ -1,0 +1,6 @@
+let's say int arr[] = {1,2,3,4,5,6,7};
+
+if i will print arr I will get the address of the first value (1) because arr is targeting the first element of an array
+
+
+=================================

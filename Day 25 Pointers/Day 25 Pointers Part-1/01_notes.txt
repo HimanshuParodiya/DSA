@@ -17,6 +17,8 @@ so in our case, the num will mapped with its memory's address
 
 // To check the address we have address operator --> & 
 
+
+address is in the format of hexadecimal numbers
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Now Pointers comes in the role
