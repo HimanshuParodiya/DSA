@@ -11,7 +11,7 @@ int main()
     // cout << &arr[2]; // address of 2nd(address of 1st + 4 (in hexadecimal format)) element in an array
     // cout << *arr;
 
-    int *ptr = arr;
+    int *ptr = arr; //  because arr is already returning the address so we dont need to use &
     // *ptr++; // with this it will print 5 because ++ is first then *ptr
     (*ptr)++; // with this it will print 5 because here *ptr first then ++
     cout << *ptr;

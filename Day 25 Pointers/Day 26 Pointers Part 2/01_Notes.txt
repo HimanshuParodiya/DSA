@@ -4,3 +4,32 @@ if i will print arr I will get the address of the first value (1) because arr is
 
 
 =================================
+
+Difference between pointers and array
+ 
+1) let's see what is happening behind the scene 
+in the case of an array
+int arr[10] // size is 40 bytes
+we have reserved the memory of 40 bytes and arr is pointing to the address of 1st element
+
+in the case of pointers
+
+int *ptr = &arr[0] // size is 8 bytes
+
+
+2) & will print Different address
+
+
+=================================
+
+char Array 
+
+
+
+    int arr[5] = {1, 2, 3, 4, 5};
+    char ch[6] = {'a', 'b', 'c', 'd', 'e'};
+
+    cout << ch;  // abcde
+    cout << arr; // address 0x61fefc
+
+    in case of int arr printing the address but in case of char ch is printing the chars 
