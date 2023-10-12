@@ -33,3 +33,38 @@ char Array
     cout << arr; // address 0x61fefc
 
     in case of int arr printing the address but in case of char ch is printing the chars 
+
+
+=================================
+
+pointers in function
+
+
+we can change the value if we pass the pointer to a function we will get the update value in our main function through update function
+
+void update(int *ptr)
+{
+    *ptr = *ptr + 1;
+}
+
+int main()
+{
+
+    int val = 5;
+
+    int *ptr = &val;
+    cout << ptr; // 5
+    update(ptr); 
+    cout << *ptr; // 6
+
+
+    return 0;
+}
+
+
+// there is not Difference between void print(int arr[]) and void print(int *arr) both are same  
+
+=================================
+
+Benefit
+
