@@ -1,0 +1,21 @@
+first, let's do a quick revision 
+
+
+// create a pointer for i
+int i = 5;
+int *ptr = &i;
+
+
+
+// Why do we need double-pointers
+
+when we want to create a pointer corresponding to I we create a pointer but when we want to create a pointer corresponding to a pointer we use a double pointer
+
+
+//How to declare a double pointer?
+int i = 5;
+int *ptr = &i;
+int **double_Ptr =  &ptr;
+
+
+// Double Pointers with function
