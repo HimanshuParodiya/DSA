@@ -1,0 +1,14 @@
+1) Reference Variable
+
+let us have a Variable I with the value of 5
+what if we give it another name j
+
+So, this is the concept of Reference Variable
+where memory is the same but the names are different
+
+=========================================================================
+
+// So, why do we need this Reference type variable?
+
+let's revise 
+    while learning Function we 
