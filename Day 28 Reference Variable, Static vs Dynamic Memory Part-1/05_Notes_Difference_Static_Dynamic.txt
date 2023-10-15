@@ -1,0 +1,7 @@
+1) Difference between Static and Dynamic Memory allocation
+
+// i) creating the array in both 
+static  = int arr[50]; // 50 x 4 = 200
+dynamic = int *arr = new int[50]; // 8(pointer size) + 50 x 4 = 8 + 200 = 208
+
+

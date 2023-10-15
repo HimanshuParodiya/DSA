@@ -10,5 +10,39 @@ where memory is the same but the names are different
 
 // So, why do we need this Reference type variable?
 
-let's revise 
-    while learning Function we 
+so the variable inside the Function can change the value inside the main Function;
+
+=========================================================================
+// Did you remember that we should not define the size of the array during runtime 
+    means
+
+    int i;
+    cin>>i;
+    int arr[i];
+
+because when we do something like this arr[] will not be able to get the exact memory while compiling maybe it can take less memory from the stack
+
+so what should we do how can I pass the input as the size of the arr 
+ ---For that, we have heap storage 
+
+
+when we want to use the heap memory we will use the new keyword
+
+// creating a char in heap memory
+
+new char; // it will return its address in heap memory
+and remember we can't give names here like we do in stack memory
+int i = 5;
+we can do new int;
+
+
+// access the memory from heap to variable using pointer
+
+char *ch = new char;
+
+
+=========================================================================
+// memory static and dynamic
+
+when we use stack memory it's called static memory allocation 
+when we use heap memory it's called dynamic memory allocation
