@@ -40,6 +40,14 @@ we can do new int;
 
 char *ch = new char;
 
+we have to delete this memory at the end (Reference 05_Notes_Difference_Static_Dynamic.txt)
+delete ch;
+
+int case or array 
+int *arr = new int[n];
+
+delete[] arr;
+
 
 =========================================================================
 // memory static and dynamic
