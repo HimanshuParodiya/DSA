@@ -1,0 +1,23 @@
+Here we will see how we can create a 2D array using dynamic memory....
+
+static way to create 2D array : int arr[row][col]
+==============================================================================
+
+int **arr = new int *[row];
+it will give something like this 
+int *[row] ---> (now I want to make an array from here to col)
+int *[row] ---> (now I want to make an array from here to col)
+int *[row] ---> (now I want to make an array from here to col)
+int *[row] ---> (now I want to make an array from here to col)
+
+
+so for that, we will traverse the loop
+
+for(0 - row){
+
+    arr[i] = new int [col];
+}
+
+so our array is created
+
+now we have to delete/release the heap memory 
