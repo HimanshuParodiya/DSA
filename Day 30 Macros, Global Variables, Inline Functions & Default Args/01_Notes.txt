@@ -1,0 +1,35 @@
+Here we will discuss some keywords that will optimize our code.
+
+----------------------------------------------------------------
+
+1) Macros
+
+We will discuss #define
+
+i) What is #define?
+ans) With #define we define/create our Macro
+
+ii) So what is Macros?
+ans) Let's understand with an example:-
+
+So, I have written a code where I am doing some math work 
+and I am using pi (π)(3.14) too much
+for example
+    a)Curve surface area of cone πrl 
+    b)Area π*r*r
+
+so one day we got instruction that we have to use π as 3.20
+now i have to change the value of pi everywhere 
+
+so what I can do is I can create a variable named pi and use it everywhere and if I have to change the value I will only change the variable pi 
+
+// Let's see the cons of using a variable pi
+a) we are using minimal storage/memory.
+
+// So can we do something that doesn't require memory?
+
+So we can create a Macro named PI
+#define PI 3.14 (; is not needed)
+
+so what is Macros?
+Macro is nothing but a find-and-replace. If you you find PI in the code you will replace it with 3.14 before compilation. And this is not a variable so we didn't consume memory here. And we cant update Macros(PI = PI + 1  ...not possible)
