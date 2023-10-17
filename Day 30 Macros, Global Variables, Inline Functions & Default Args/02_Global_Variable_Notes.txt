@@ -1,0 +1,15 @@
+Global Variable
+
+1) Let's say I have a variable and I want to share it between functions.
+
+    i) I can use the Reference variable to share the variable between functions
+    ii) There is another method to share the variable between functions.
+
+
+ii) 2nd Method
+we can create a Global variable on top of our program (before int main)  
+
+// should we use 2nd method #STICKILY_NO this is bad practice 
+this is bad practice because if any function changes its value it will reflect everywhere.
+
+so instead of 2nd method use Reference variable (&) concept
