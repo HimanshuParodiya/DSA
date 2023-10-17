@@ -1,0 +1,30 @@
+Inline Functions
+
+1) What are the Inline Functions?
+ans) Inline functions are used to reduce the function call overhead.
+
+What does that mean?
+
+let's see the example of it.
+
+we create a function called func and post-increment the passed a and b parameters.
+and then call the function inside the main function.
+
+
+// Behind the scene 
+
+ we have a stack space 
+i) Initially there is a main function inside the stack space it contains a and b
+ii) then it has func() function in this function we create again a and b. and here we have allocated the new memory(memory usage)
+
+let's go to line number 21
+
+let's see what the inline function is doing. 
+1) if the function body is one-liner we can use the inline function 
+2) if the function body is 2 3 liners then it depends upon the compiler could take it as an inline 
+
+so what does inline function mean 
+look we have seen Macro which was replaced with PI. So same with inline it will replace with getMax function.
+
+what is the use of it: i) Increase the readability
+ii) no need to create a new storage or calling function in stack space because it will run before compilation. 
