@@ -1,0 +1,12 @@
+Recursion
+
+1) What is Recursion?
+ans) when a function calls itself until a specified condition is met.
+
+fun(){
+    fun();
+}
+but this will run infinitely 
+to prevent it we have to specify the condition when we have to terminate this function. This condition is called the base condition.
+
+there can be single base conditions and multiple base conditions we will see later. 🙂 
