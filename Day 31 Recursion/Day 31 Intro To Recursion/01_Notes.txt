@@ -1,0 +1,26 @@
+Recursion
+
+-----------------------------------------------------------------------------
+What is Recursion?
+when a function calls itself that is called Recursion directly or indirectly.
+
+
+here we have to write base cases.
+-----------------------------------------------------------------------------
+
+
+Recursion Tree
+
+when we explain the Recursion function in the form of the tree.
+
+
+   👆 (24*5) 120
+factorial(5)
+  👇 👆 (6*4) 24
+factorial(4)
+  👇 👆 (2*3) 6
+factorial(3)
+  👇 👆 2
+factorial(2)
+  👇 👆 1
+factorial(1)
