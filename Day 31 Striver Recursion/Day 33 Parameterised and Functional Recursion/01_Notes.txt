@@ -1,0 +1,23 @@
+find the sum of n natural number
+
+we will solve this problem in two ways
+
+1) First is parameter wise way
+2) Second is a functional way
+
+1) Parameterized way
+
+Here we pass the result as the parameter and then return/print it.
+
+2) Functional way
+
+Here we don't want the parameter to do the work function return the answer. See if we pass 5 to the function we want it to return the answer (sum of n number)
+
+Let's continue with our example
+
+func(3)
+
+we now n = 3 and we want the sum of n - 1 and then n - 2(for n = 3) and at the end when n = 0 we will write base case n==0 return 0 
+
+so we can do 
+return n + func(n - 1) 
