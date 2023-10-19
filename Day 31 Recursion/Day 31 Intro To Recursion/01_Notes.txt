@@ -24,3 +24,6 @@ factorial(3)
 factorial(2)
   👇 👆 1
 factorial(1)
+
+👇 = Recursion
+👆 = return 
