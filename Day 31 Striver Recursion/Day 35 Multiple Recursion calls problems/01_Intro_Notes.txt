@@ -1,0 +1,39 @@
+Multiple recursion calls
+
+something like this 
+
+f(){
+
+    f();
+    f(); // there could be more     
+}
+
+main(){
+    f();
+}
+
+ // Let's understand it with the Fibonacci number
+
+ 0 1 1 2 3 5 8 13 21 34 55 ..... n-1 + n-2;
+
+
+for 
+fib(6) =  fib(5) + fib(4)
+
+did you see the pattern fib(n) = fib(n-1) + fib(n - 2)
+
+Remember in case of multiple recursion calls the first function will call and return first, then the next function will call and return and so on.
+
+Let's create a recursion tree for this 
+
+                  ______________fib(4)_____________     
+                 |                                 |
+                fib(3)                           fib(2)
+                 |                                 |
+        fib(2)         fib(1)              fib(1)          fib(0)
+         |               |                    |              | 
+fib(1)       fib(0)    return n            return n        return n
+  |            |
+return n    return n
+
+Time complexity is near about O(2^n)
