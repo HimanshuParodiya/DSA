@@ -1,0 +1,35 @@
+// Here we have to find the combination
+
+// Remember whenever we have to find the combination or subsequence we use recursion so we are going to solve it using recursion
+
+-----------------------------
+
+// How will we start working on it
+
+whenever we have to pick up and form a combination
+
+we will think in pick and non-pick thought process
+
+so the function will go like
+
+f(index, target, vector<int>ans)
+
+arr = {2,3,6,7} target = 7
+here we can pick the element as many times as we want  
+
+
+
+                                                                                                                                                                                                                                        f(0, 7, ans)
+
+                                                                                                                                             f(0, 5, (2))                                                                                                                                             f(1, 7, ()) // 0 become 1 because we are not picking 0th index so we will go further(1) and the target will remain the same because we didn't pick anything so we didn't minus anything, and ans is empty  
+
+                                                                   f(0, 3, (2,2))if it was given that you can't pick the same element again then it would be 1, not 0                       f(1, 5, (2))
+                                                                                                                                                                                     we didn't pick that element again
+             f(0,1,(2,2,2))                                                                                  f(1,3,(2,2))
+here 0 because we decided to pick that element again                                                          not picking the same element again
+
+now I can't pick the same element again because the same element is 2 and the target remains 1 (1-2 = -1 that's why)
+so f(1,1,(2,2,2)) still can't pick 1st element because it is 3 (1-3 = -2 that's why)
+so f(2,1,(2,2,2)) still can't 2nd = 6
+f(3,1,(2,2,2)) still can't 3rd = 7
+f(4, 1 , (2,2,2))
