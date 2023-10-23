@@ -1,0 +1,7 @@
+We have given an array,
+Return true if the array is sorted and false if not.
+
+// To check whether a particular array is sorted or not
+// we can use
+// Loops === we have already used it
+// Recursion  === Let's Goo 🚀🚀

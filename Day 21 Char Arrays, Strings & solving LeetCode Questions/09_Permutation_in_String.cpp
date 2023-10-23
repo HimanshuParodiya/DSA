@@ -16,7 +16,7 @@ bool isEqual(int a[26], int b[26])
 bool checkInclusion(string s1, string s2)
 {
 
-    int arr1[26] = {0}; // couting each element of s1 but for now initialize it with 0;
+    int arr1[26] = {0}; // counting each element of s1 but for now initialize it with 0;
     for (int i = 0; i < s1.length(); i++)
     {
         int indexOfs1IthElement = s1[i] - 'a';
@@ -26,7 +26,7 @@ bool checkInclusion(string s1, string s2)
     // counting element for s2
     int i = 0;
     int windowSize = s1.length();
-    int arr2[26] = {0}; // couting each element of s2 till s1(windowSize), but for now initialize it with 0
+    int arr2[26] = {0}; // counting each element of s2 till s1(windowSize), but for now initialize it with 0
     while (i < windowSize && i < s2.length())
     {
         int indexOfs2IthElement = s2[i] - 'a';
@@ -34,7 +34,7 @@ bool checkInclusion(string s1, string s2)
         i++;
     }
 
-    // comapare if arr1 and arr2 is equal ?
+    // compare if arr1 and arr2 is equal ?
 
     if (isEqual(arr1, arr2))
     {
