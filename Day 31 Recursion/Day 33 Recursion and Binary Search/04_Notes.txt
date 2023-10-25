@@ -1,0 +1,6 @@
+Till here we have seen the Binary Search implementation
+
+// We use a while loop (start<= end) and then we initialize mid and according to the condition, we increment start and decrement end.
+
+
+Here we will not use a loop we will use a recursion
