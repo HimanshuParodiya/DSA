@@ -1,0 +1,22 @@
+We are given an array of integers and an integer n(size of the array) we have to return them all the subsets sum in increasing order
+
+arr = {3,1,2};
+n = 3;
+
+what will be the subsets of arr 
+subsets -----------> their sums
+{}      ----------------> 0
+{3}     ----------------> 3
+{1}     ----------------> 1
+{2}     ----------------> 2
+{3,1}   ----------------> 4
+{3,2}   ----------------> 5
+{1,2}   ----------------> 3
+{3,1,2} ----------------> 2
+
+
+we can use the Power set (Brute force solution). Its time complexity is 2^n x N.
+when the interviewer asks to optimize it we will use the recursion technique
+
+
+ 
