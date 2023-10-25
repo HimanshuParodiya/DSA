@@ -1,0 +1,10 @@
+1) We have given an array that contains duplicates and we have to return its all subsets without containing duplicates.
+
+
+
+// Brute Force
+
+The first solution will be the brute force approach 
+
+We will use the pick and non-pick technique for all the subsets (2^n)
+and then we will store them in the set data structure.
