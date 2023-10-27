@@ -1,0 +1,33 @@
+arr =  {38,27,43,3,9,82,10};
+
+Merge Sort:-
+
+1) We have to divide the array in two parts by finding the mid.
+
+mid = 3
+
+so 2 arrays are 
+
+{38,27,43,3} | {9,82,10}
+again find the mid and divide the array into two parts
+
+{38,27} and {43,3} | {9,82} and {10}
+again find the mid and divide the array into two parts
+
+{38} and {27} | {43} and {3} | {9} and {82} and {10}
+  \      /        \      /      \       /        /
+now we will Merge the array in sorted order
+
+{27,38} | {3,43} | {9,82} | {10} 
+    \       /       \       /
+{3,27,38,43} | {9,10,82}
+    \               /
+{3,9,10,27,38,43,82}
+
+
+
+
+
+Merge Sort is faster than Selection Sort, Bubble Sort, and Insertion Sort. 
+
+
