@@ -72,10 +72,10 @@ void mergeSort(vector<int> &nums, int start, int end)
     }
 
     int mid = start + (end - start) / 2;
-    // divide left part form start to mid
+    // divide left part form start to mid and sort
     mergeSort(nums, start, mid);
 
-    // divide right part form mid to end
+    // divide right part form mid to end and sort
     mergeSort(nums, mid + 1, end);
 
     // merge divided array

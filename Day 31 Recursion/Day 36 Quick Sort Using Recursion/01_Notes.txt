@@ -1,0 +1,58 @@
+Quick sort is the fastest sorting algorithm.
+
+In Merge Sort 
+
+1) We have an array 
+2) We sort it into two sub-arrays from the middle
+3) Then we merge two sorted array
+
+
+Quick Sort sort is the reverse of Merge Sort 
+
+ We have an array [3,5,1,8,2,4];
+
+ Steps:
+
+1) Pick any element and put it right(sahi) place so that all the elements to its left are less than the element and all the elements to its right are greater than the element. It's called partition.
+
+[3,5,1,8,2,4] We pick 3 so its right place is at index 2 (because there are 2 elements there which are less than 3)
+    👇
+[1,5,3,8,2,4] but as we said all the elements to its left should be less than the element
+    👇
+[1,2,3,8,5,4] 
+
+
+
+So first, we will write the sorting algorithm which will place the elements in their right place.
+
+void quickSort(int arr[] , int start, int end){
+    //base case 
+    if(start >= end){
+        return;
+    }
+
+    // partition
+    int index = partition(arr,start,end)
+    //it will return the index where we put our element (in our example 3 put at 2nd index)
+
+    //sort each each side of the partition element
+    quickSort(arr,start,index - 1 )// sort left side (before 3)
+
+    quickSort(arr,index + 1,end) // sort right side (after 3)
+
+}
+
+// Now, we will see how we can write the partition function
+
+1) Let's call the pivot to the element that we want to pick and drop at its correct place.
+2) Count all the elements that are smaller than the pivot 
+3) Put the pivot at the start + the total count of elements that are less than the pivot
+4) Now we have to satisfy the condition where <a | a | > a
+5) Now we will create 2 pointers at 0th index i and nth index j check if i > pivot || j < pivot so swap.
+
+array will become 
+
+[1,5,3,8,2,4] 
+    👇
+[1,2,3,8,5,4] 
+now recursion will solve further 
