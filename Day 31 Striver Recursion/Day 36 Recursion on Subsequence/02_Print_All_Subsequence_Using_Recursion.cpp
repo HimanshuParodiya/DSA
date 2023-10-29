@@ -12,11 +12,11 @@ using namespace std;
 //     cout << endl;
 // }
 
-vector<char> getSubsequence(string &arr, int index, vector<char> &ans)
+void getSubsequence(string &arr, int index, vector<char> &ans)
 {
     if (index >= arr.size())
     {
-        printVector(ans); // Print the subsequence
+        // printVector(ans); // Print the subsequence
         return;
     }
     getSubsequence(arr, index + 1, ans); // solve non pick side
@@ -34,6 +34,12 @@ int main()
     int index = 0;
 
     getSubsequence(s, index, ans);
+
+    for (int i = 0; i < ans.size(); i++)
+    {
+        cout << ans[i] << " ";
+    }
+    cout << endl;
 
     return 0;
 }

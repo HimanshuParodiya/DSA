@@ -56,9 +56,9 @@ void quickSort(int arr[], int start, int end)
     // partition
     int index = partition(arr, start, end);
 
-    // sort left part
+    // sort left part of partition
     quickSort(arr, start, index - 1);
-    // sort right part
+    // sort right part of partition
     quickSort(arr, index + 1, end);
 }
 int main()
@@ -78,3 +78,8 @@ int main()
 
     return 0;
 }
+
+// Time complexity O(nlogn)
+// Space complexity O(n)
+
+// worst case complexity is O(n^2)
