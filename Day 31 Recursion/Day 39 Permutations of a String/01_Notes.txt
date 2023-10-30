@@ -1,0 +1,22 @@
+1) Permutations of a String
+
+
+arr = {1,2,3};
+
+
+here we will not use an extra data structure for mapping.
+
+                                                                                                                                                          func[1,2,3]
+                                                                              /                                                                                |                                                                                       \
+swap each element from 0th index (1)                                     func[1,2,3]                                                                      func[2,1,3]                                                                               func[3,2,1]
+                                                                           / | \                                                                               / | \                                                                                    / | \
+swap each element from 1st index (2)                      func([1,2,3])          func([1,3,2])                                               func([2,1,3])                        func([2,3,1])                                   func([3,2,1])                              func([3,1,2])
+                                                             / | \                   / | \                                                       / | \                                / | \                                            / | \                                    / | \
+swap each element from 2nd index (3)      func([1,2,3])(3 swap with 3) (*) | func([1,3,2])(2 swap with 2) (*)         func([2,1,3])(3 swap with 3)   (*)            func([2,3,1])(1 swap with 1)  (*)        func([3,2,1])(1 swap with 1)  (*)          func([3,1,2])(2 swap with 2)  (*)
+
+
+(*) == For this recursion call pointer exceeds the array length
+
+
+Time Complexity = O(n! x n) (n! = total output| n = each array length)
+Space Complexity = O(n!)
