@@ -1,0 +1,32 @@
+Here we will solve the problem using recursion and a little bit of backtracking. 
+This question is most of the time asked in D.E.Shaw
+
+
+question:- https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
+
+
+1) Input: The input to the code is a string of digits, such as "23." Each digit corresponds to a set of letters, just like the numbers on a standard telephone keypad.
+
+2) Output: The goal is to generate and collect all possible combinations of letters that can be formed from the given digits.
+
+3) Approach/Intuition:
+
+The code uses a recursive function called getCombination to generate the combinations.
+It starts with an empty output string and an index that represents the position of the current digit.
+The mapping vector stores the possible letters for each digit.
+The recursive function explores all combinations by appending each possible letter for the current digit to the output string and moving on to the next digit.
+This process continues recursively until all digits have been processed.
+When the code reaches the base case (when the index exceeds the length of the input digits), it adds the current combination to the result vector.
+
+4) Recursion Tree: The recursion can be visualized as a tree, where each node represents a recursive call, and the branches represent the different letter choices for each digit. Here's a simplified example for the input "23":
+
+            23
+     /      |       \
+    a       b        c
+  / | \   / | \   / | \
+ ad ae af bd be bf cd ce cf
+
+
+Starting with an empty string, it explores the choices for "2" (a, b, c), and for each choice, it explores the choices for "3" (d, e, f) and so on.
+
+5) Result: The code collects all these combinations in the ans vector and prints them as a list.
