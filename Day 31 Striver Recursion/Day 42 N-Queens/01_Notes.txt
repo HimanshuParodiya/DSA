@@ -1,0 +1,140 @@
+N-Queen Problem 
+link:- https://leetcode.com/problems/n-queens/description/
+
+Rules of problem
+1) Each Row must have 1 queen 
+2) Each Col must have 1 queen 
+3) None of the queens attack each other
+
+
+// Intuition
+
+Let's say we have an NxN chessboard 
+
+[
+        Col0,   Col1,   Col2   Col3
+
+   Row0  [],     [],     [],    [],
+    
+   Row1  [],     [],     [],    [],
+    
+   Row2  [],     [],     [],    [],
+
+   Row3  [],     [],     [],    [],
+]
+
+
+Let's start from 0th Col, Where can I place my queen in 0th col  
+I can place it at [Row0, Col0], [Row1, Col0], [Row2 ,Col0], [Row3 ,Col0]
+
+                                                                                                          ______________________________________________Fun()___________________________________________________________
+for 0th Col queen can be at (0,0),(1,0),(2,0),(3,0)                                                      |                                    |                       |                                                 |                                                            
+                                                                                                    (Row0, Col0)                         (Row1, Col0)            (Row2, Col0)                                      (Row3, Col0)
+now place the queen on 1st col index where col0 will not attack                                     _____|___________                         |                       |                                       __________|___________________________          
+                                                                                                   |                 |                   (Row3, Col1)            (Row0, Col1)                                |                                      |
+                                                                                             (Row2, Col1)       (Row3, Col1)                  |                       |                                (Row0, Col1)                              (Row1, Col1)
+now place the queen on 2nd col index where col0, col1 will not attack                              |                 |                   (Row0, Col2)            (Row3, Col2)                                |                                      |
+                                                                                                  (*)           (Row1, Col2)                  |                       |                                (Row2, Col2)                                (*)
+                                                                                                  ans1               |                   (Row2, Col3)            (Row1, Col3)                                |                                     ans 6        
+                                                                                                                    (*)             index > col == Bingo      index > col == Bingo                          (*)                                    
+                                                                                                                    ans2                    ans 3                   ans 4                                   ans 5                                 
+                                                                                                                                                                                                                                                             
+
+
+(*) = can't place in this col because other queens are attacking in this col now recursion is over go back with removing queen(backtracking)
+
+
+ans 1  ❌
+[
+        Col0,   Col1,   Col2   Col3
+
+   Row0  [*],     [ ],     [x],    [ ],
+    
+   Row1  [ ],     [ ],     [x],    [ ],
+    
+   Row2  [ ],     [*],     [x],    [*],
+
+   Row3  [ ],     [ ],     [x],    [ ],
+] // can't place queen at col2 
+
+ans 2  ❌
+[
+        Col0,   Col1,   Col2   Col3
+
+   Row0  [*],     [ ],     [x],    [x],
+    
+   Row1  [ ],     [ ],     [*],    [x],
+    
+   Row2  [ ],     [ ],     [x],    [x],
+
+   Row3  [ ],     [*],     [x],    [x],
+] // can't place queen at col3 
+
+
+
+ans 3  ✅
+[
+        Col0,   Col1,   Col2   Col3
+
+   Row0  [ ],     [x],     [*],    [x],
+    
+   Row1  [*],     [x],     [ ],    [x],
+    
+   Row2  [ ],     [x],     [ ],    [*],
+
+   Row3  [ ],     [*],     [ ],    [ ],
+]
+
+ans 4   ✅
+[
+        Col0,   Col1,   Col2   Col3
+
+   Row0  [ ],     [*],     [x],    [x],
+    
+   Row1  [ ],     [ ],     [x],    [*],
+    
+   Row2  [*],     [ ],     [x],    [ ],
+
+   Row3  [ ],     [ ],     [*],    [ ],
+]
+
+ans 5  ❌
+[
+        Col0,   Col1,   Col2   Col3
+
+   Row0  [ ],     [*],     [x],    [x],
+    
+   Row1  [ ],     [ ],     [x],    [x],
+    
+   Row2  [ ],     [ ],     [*],    [x],
+
+   Row3  [*],     [ ],     [x],    [x],
+] // can't place queen at Col3 
+
+
+ans 6  ❌
+[
+        Col0,   Col1,   Col2   Col3
+
+   Row0  [ ],     [*],     [x],    [x],
+    
+   Row1  [ ],     [ ],     [x],    [x],
+    
+   Row2  [ ],     [x],     [*],    [x],
+
+   Row3  [*],     [x],     [x],    [x],
+] // can't place queen at Col3 
+
+
+ans 7  ❌
+[
+        Col0,   Col1,   Col2   Col3
+
+   Row0  [ ],     [ ],     [x],    [ ],
+    
+   Row1  [ ],     [*],     [x],    [ ],
+    
+   Row2  [ ],     [x],     [x],    [ ],
+
+   Row3  [*],     [x],     [x],    [ ],
+] // can't place queen at Col2
