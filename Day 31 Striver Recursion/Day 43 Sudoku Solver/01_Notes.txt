@@ -1,0 +1,18 @@
+Sudoku solver 
+
+link:- https://leetcode.com/problems/sudoku-solver/description/
+
+we have to solve a Sudoku puzzle by filling the empty cells.
+
+Rule
+1) Each of the digits 1-9 must occur exactly once in each row.
+2) Each of the digits 1-9 must occur exactly once in each column.
+3) Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
+
+
+// Approach 
+i) We will check each row.
+ii) If there is space we will place ith (number from 1 to 9 there ) while checking if there is the same element in left right top and bottom.
+iii) When we will not able to place any number at space. So, the Recursion will be over and it will return false.
+iv) When sudoku is complete we will return the true 
+// Remember we will not do backtracking when the return type is true because that will be my answer.
