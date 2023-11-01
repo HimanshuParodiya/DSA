@@ -1,0 +1,102 @@
+Rat in a Maze
+
+[
+        Col0,   Col1,   Col2   Col3
+         🐀
+   Row0  [1],     [0],     [0],    [0],
+          👇  
+   Row1  [1], 👉  [1],     [0],    [1],
+          👇       👇 
+   Row2  [1], 👉  [1],     [0],    [0],
+                    👇
+   Row3  [0],     [1], 👉  [1], 👉  [1], 🐀
+]
+
+1 = open path (rat can go further)
+0 = close path (rat can't go further from here) 
+
+Our current position is (0,0) and we have to (n-1,n-1);
+
+so in the above case, there are 2 solutions 
+i) DDRDRR
+ii) DRDDRR
+
+
+// Approach
+
+first Let's` understand the directions 
+Up(U) = where the row will decrease so the coordinate will be direction[row-1][col]
+Down(D) = where the row will increase so the coordinate will be direction[row+1][col]
+Right(R) = where the col will increase so the coordinate will be direction[row][col + 1]
+Left(L) = where the col will decrease so the coordinate will be direction[row][col - 1]
+
+
+[
+        Col0,   Col1,   Col2   Col3
+         🐀
+   Row0  [1],     [0],     [0],    [0],
+          👇  
+   Row1  [1], 👉  [1],     [0],    [1],
+          👇       👇 
+   Row2  [1], 👉  [1],     [0],    [0],
+                    👇
+   Row3  [0],     [1], 👉  [1], 👉 [1], 🐀
+]
+
+So, the starting coordinates will be (x,y) 
+where x = 0, and y = 0
+
+now the Rat has 4 directions to go Left, Right, Up or Down
+let answer = ""
+
+first, it goes to D
+answer = "D"
+
+Second, Again it goes to D
+answer = "DD"
+
+Third, it goes to R (Because D doesn't have 1, Left has no col, and Up we already came from but wait there is 1 in right so go to right) // We have to do something so it will not go where it came from (answer HashMap we will mark it 1 if it passes the route if not then 0)
+answer = "DDR"
+
+Fourth, it goes to D (Because there is 1)
+answer = "DDRD"
+
+Fifth, it goes to R (Because there is 1)
+answer = "DDRDR"
+
+Sixth, it goes to R (Because there is 1)
+answer = "DDRDRR"
+
+[
+        Col0,   Col1,   Col2   Col3
+         🐀
+   Row0  [1],     [0],     [0],    [0],
+          👇  
+   Row1  [1], 👉  [1],     [0],    [1],
+          👇       👇 
+   Row2  [1], 👉  [1],     [0],    [0],
+                    👇
+   Row3  [0],     [1], 👉  [1], 👉 [1], 🐀
+]
+
+
+HashMap[ // mark 1 if rat passes the route
+
+        Col0,   Col1,   Col2   Col3
+         
+   Row0  [1],     [0],     [0],    [0],
+            
+   Row1  [1],     [0],     [0],    [0],
+                  
+   Row2  [1],     [1],     [0],    [0],
+                    
+   Row3  [0],     [1],     [1],    [1], 🐀
+]
+
+
+// So to solve the problem we are following some rules
+
+1) The next path should be inside the matrix.
+2) The next path must be 1 not 0.
+3) The next path of the HashMap array must be 0(not visited).
+4) During backtracking unmarked visits.
