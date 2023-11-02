@@ -1,0 +1,45 @@
+Recursion Time and Space Complexity for Binary Search
+
+Day 33 file 04
+
+f(n) = xyz + f(n/2) // xyz = processing , f(n/2) = next function call for half part
+
+Time Complexity
+
+bool binarySearch(vector<int> &nums, int start, int end, int target)
+{
+    if (start > end)
+    {
+        return false; // target is not found
+    } // till here k1
+
+    int mid = start + (end - start) / 2;
+
+    if (nuns[mid] == target)
+    {
+        return true;
+    } // from k1 to here = k2
+
+    if (nums[mid] < target)
+    {
+        return binarySearch(nums, mid + 1, end, target);
+    }
+    if (nums[mid] < target)
+    {
+        return binarySearch(nums, start, mid - 1, target);
+    } // from k2 to here T(n/2) 
+}
+
+T(n) = k1 + k2 + T(n/2)
+T(n/2) = k1 + k2 + T(n/4)
+T(n/4) = k1 + k2 + T(n/8)
+T(n/8) = k1 + k2 + T(n/16)
+T(2) = k1 + k2 + T(1)
+T(1) = k
+
+after canceling the matching ones we got
+
+T(n) = a*K (a = occurrence of k and as we know a = logn ) n/2^a = 1 = a = logn 
+
+T(n) = K.logN
+T(n) = O(logn)
