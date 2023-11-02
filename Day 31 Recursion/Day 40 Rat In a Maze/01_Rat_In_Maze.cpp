@@ -5,71 +5,73 @@ using namespace std;
 
 bool isSafe(int newx, int newy, int n, vector<vector<int>> visited, vector<vector<int>> &m)
 {
+    // newx should be inside matrix, same with newy, next path of hashMap(visited) must be 0 and next path of given matrix should be 1;
     if ((newx >= 0 && newx < n) && (newy >= 0 && newx < n) && visited[newx][newy] == 0 && m[newx][newy] == 1)
     {
-        return true;
+        return true; // if yes then return true
     }
     else
     {
-        return false;
+        return false; // else false
     }
 }
 void solve(vector<vector<int>> &m, int n, vector<string> &ans, int srcx, int srcy, vector<vector<int>> visited, string path)
 {
     // base case
-    if (srcx == n - 1 && srcy == n - 1)
+    if (srcx == n - 1 && srcy == n - 1) // if rat reaches last row and col then return path in ans
     {
         ans.push_back(path);
         return;
     }
 
-    visited[srcx][srcy] = 1;
+    visited[srcx][srcy] = 1; // mark visited path
 
     // 4 Choices = D, L, R, U
 
     // Down
-    int newx = srcx + 1;
-    int newy = srcy;
+    int newx = srcx + 1; // increment the row
+    int newy = srcy;     // same col
 
     if (isSafe(newx, newy, n, visited, m))
     {
         path.push_back('D');
-        solve(m, n, ans, newx, newy, visited, path);
+        solve(m, n, ans, newx, newy, visited, path); // pass new coordinates
         path.pop_back();
     }
 
     // Left
-    newx = srcx;
-    newy = srcy - 1;
+    newx = srcx;     // same row
+    newy = srcy - 1; // decrement col
 
     if (isSafe(newx, newy, n, visited, m))
     {
         path.push_back('L');
-        solve(m, n, ans, newx, newy, visited, path);
+        solve(m, n, ans, newx, newy, visited, path); // pass new coordinates
         path.pop_back();
     }
     // Right
-    newx = srcx;
-    newy = srcy + 1;
+    newx = srcx;     // same row
+    newy = srcy + 1; // increment col
 
     if (isSafe(newx, newy, n, visited, m))
     {
         path.push_back('R');
-        solve(m, n, ans, newx, newy, visited, path);
+        solve(m, n, ans, newx, newy, visited, path); // pass new coordinates
         path.pop_back();
     }
 
     // Up
-    newx = srcx - 1;
-    newy = srcy;
+    newx = srcx - 1; // decrement row
+    newy = srcy;     // same col
 
     if (isSafe(newx, newy, n, visited, m))
     {
         path.push_back('U');
-        solve(m, n, ans, newx, newy, visited, path);
+        solve(m, n, ans, newx, newy, visited, path); // pass new coordinates
         path.pop_back();
     }
 
+    // unmarked visited path
     visited[srcx][srcy] = 1;
 }
 
