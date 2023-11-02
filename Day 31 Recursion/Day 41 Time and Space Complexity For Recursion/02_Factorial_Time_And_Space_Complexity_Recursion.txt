@@ -1,0 +1,37 @@
+Recursion Time and Space Complexity
+
+1) Time and Space Complexity for Factorial problem
+
+
+int factorial(int n){
+    // base case
+    if(n == 0){
+        return 1;
+    }
+
+    return n * factorial(n-1);
+}
+
+i) Try to find out Eq ---> in case of factorial = f(n) = n * f(n - 1);
+
+
+f(n) = n * f(n - 1)
+T(n) = k1 + k2 + T(n-1) 
+k1 for base case
+k2 for Recursion Call (return n * factorial(n-1);)
+
+now, T(n) = K + T(n - 1) // k1 + k2 == K
+
+T(n) = K + T(n-1) 
+T(n-1) = K + T(n-2)
+T(n-2) = K + T(n-3)
+T(n-3) = K + T(n-4)
+T(1) = K + T(0)
+
+T(n) = K // T(n-2) these will cancel them self
+
+T(n) = nK + k1
+T(n) = n
+T(n) = O(n)
+
+
