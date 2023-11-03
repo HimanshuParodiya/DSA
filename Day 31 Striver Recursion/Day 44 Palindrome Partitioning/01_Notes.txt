@@ -1,0 +1,32 @@
+Palindrome Partitioning 
+Link:- "https://leetcode.com/problems/palindrome-partitioning/description/"
+
+
+Here we have a String and we have make partition of it so that each partition is self palindrome
+
+example string = "aabb"
+
+Partitions are ["a,a,b,b", "aa,bb", "a,a,bb", "aa,b,b"]
+
+
+so the Recursion tree will look like this 
+
+                                                               "aabb"
+                                           _______________________|_______________________
+                                          |                                               | 
+                                        a,abb                                           aa,bb
+                                  ________|________                               ________|________
+                                 |                 |                             |                 |
+                               a,a,bb            a,ab,b                        aa,b,b            aa,bb,
+                         ________|________          |                            |               answer
+                        |                 |        (*)                         aa,b,b,
+                    a,a,b,b             a,a,bb,                                answer
+                        |               answer
+                    a,a,b,b,
+                    answer
+
+
+',' = partition 
+',' reaches to end that mean we got our palindrome partition
+                        
+(*) = is not palindrome
