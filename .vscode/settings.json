@@ -49,14 +49,18 @@
     },
     "C_Cpp.errorSquiggles": "disabled",
     "cSpell.words": [
+        "aabb",
         "cout",
         "DDRD",
         "DDRDR",
         "DDRDRR",
         "Deque",
+        "DLRU",
         "DRDDRR",
         "logn",
         "newy",
+        "nexti",
+        "nextj",
         "nums",
         "sahi"
     ]
