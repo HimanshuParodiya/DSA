@@ -1,0 +1,126 @@
+K-th Permutation Sequence 
+link:- https://leetcode.com/problems/permutation-sequence/
+
+// In this problem we have given a number n(n = 3 = {1,2,3}) and we have to find its kth permutation
+
+for n = 3
+1) "123"
+2) "132"
+3) "213"
+4) "231"
+5) "312"
+6) "321"
+
+k = 4 output = "231
+the total number of permutations is n!
+
+// so first, the brute force approach is 
+1) find all the permutations 
+2) store in data structure 
+3) Sort the data structure 
+4) get the kth permutation by dataStructure[k - 1]
+
+Time complexity = O(n! x n )+ O(n! Log n!) (n! for getting all the permutations and n for storing them in the data structure then n! Log n! for sorting algorithm )
+
+//Now the interviewer will ask to optimize it 
+
+// optimize
+
+1) n = 4, k = 17
+= {1,2,3,4}
+
+I can pick 1 = rest will be {2,3,4} so there will be 6 permutations which will start with 1 (6 because there are 3 numbers in {} so they will permute in themself that will be 3! = 6 )
+
+I can pick 2 = rest will be {1,3,4} so there will be 6 permutations which will start with 2
+
+I can pick 3 = rest will be {1,2,4} so there will be 6 permutations which will start with 3
+
+I can pick 4 = rest will be {1,2,3} so there will be 6 permutations which will start with 4
+
+n = 4, k = 17
+= {1,2,3,4}
+
+
+so in 0-based indexing 
+there will be 6 permutations for index 0-5 
+there will be 6 permutations for index 6-11 
+there will be 6 permutations for index 12-17 
+there will be 6 permutations for index 18-23 
+
+
+we have to find the 17th permutation but because there is 0-based indexing we are looking for the 16th permutation 
+
+
+
+k = 16, The total permutation for each is 6
+16/6 = 2 
+
+2nd index of {1,2,3,4} = 3
+so, the first number will be 3 rest {1,2,4}
+
+answer = 3
+there will be 6 permutations for index 12-17
+
+16%6 = 4
+
+our answer will be the 4th index from 12
+
+
+
+
+
+
+
+
+
+2) k = 4
+rest = {1,2,4}
+
+my permutation will start from 1 rest {2,4} there will be 2 permutations index 0-1
+my permutation will start from 2 rest {1,4} there will be 2 permutations index 2-3
+my permutation will start from 4 rest {1,2} there will be 2 permutations index 4-5
+
+
+k = 3, The total permutation for each is 2
+3/2 = 2 
+
+2nd index of {1,2,4} = 4
+so, the first number will be 4 rest {1,2}
+answer = 3,4
+4%2 = 0
+
+
+
+
+
+
+
+k = 0
+rest = {1,2}
+
+my permutation will start from 1 rest {2} there will be 1 permutation index 0-0
+my permutation will start from 2 rest {1} there will be 1 permutation index 1-1
+
+k = 0, The total permutation for each is 0
+0/2 = 0
+0th index of {1,2} = 1
+so, the first number will be 1 rest {2}
+answer = 3,4,1
+0%0
+
+
+
+
+k = 0
+rest = {2}
+
+my permutation will start from 2 rest {} there will be 0 now pick up this number (2)
+
+answer = 3,4,1,2
+
+
+
+
+
+
+conclusion kth/permutation = pick that indies element and push in the answer  
