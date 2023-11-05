@@ -1,0 +1,112 @@
+Merge Sort
+
+arr = [3,1,2,4,1,5,2,6,7];
+
+divide them 
+
+                                                   [3,1,2,4,1,5,2,6,4] 
+                                       _____________________|______________________    
+                                      |                                            |     
+                                [3,1,2,4,1]                                     [5,2,6,4]
+                            ___________|___________                     ___________|___________
+                           |                       |                   |                       |
+                        [3,1,2]                  [4,1]               [5,2]                    [6,4]      
+                     ______|______            _____|_____         _____|_____              _____|_____
+                    |             |          |           |       |           |            |           |
+                  [3,1]          [2]        [4]         [1]     [5]         [2]          [6]         [4]
+               _____|_____
+              |           |
+             [3]         [1]
+
+
+
+
+
+            after separating each element, let's merge them while putting them in the correct place  
+
+
+                                                    [1,1,2,2,3,4,4,5,6] 
+                                       _____________________|______________________    
+                                      |                                            |     
+                                  [1,1,2,3,4]                                  [2,4,5,6]
+                            ___________|___________                     ___________|___________
+                           |                       |                   |                       |
+                        [1,2,3]                  [1,4]               [2,5]                    [4,6]      
+                     ______|______            _____|_____         _____|_____              _____|_____
+                    |             |          |           |       |           |            |           |
+                  [1,3]          [2]        [4]         [1]     [5]         [2]          [6]         [4]
+               _____|_____
+              |           |
+             [3]         [1]
+
+
+
+// Approach 
+
+arr = [3, 2, 4, 1, 3]
+      low         high
+
+0th index = low
+n-1 index = high
+
+mergeSort(arr,low, high){
+    // base case 
+    if arr.size == 0{
+        return 
+    } or 
+
+    if low >= high { //   when there is the last element it becomes something like this (arr,1,1)
+        return
+    }
+
+    mid = (low + high) /2
+
+// divide
+    mergeSort(arr,low,mid)
+
+    mergeSort(arr,mid + 1,high)
+
+// merge 
+    merge(arr,low,mid,high)
+
+}
+
+
+// merge 
+
+merge(arr,low,mid,high){
+    temp[] 
+    left = low
+    right = mid + 1
+
+    // merge till mid is greater than low && high is greater than right(mid + 1)
+
+    while(left <= mid && right <= high){
+        if(arr[left] <= arr[right]){
+            // Then we will pick the smaller one and put that into the temp array
+            temp.push_back[left];
+            left++;
+        }else{
+            temp.push_back[right];
+            right++;
+        }
+    }
+
+    // if there are elements in the left or right array
+    while(left <= mid){
+        temp.push_back[left];
+        left++;   
+    }
+    while(right <= high){
+        temp.push_back[right];
+        right++;   
+    }
+
+    //put temp array into the original array 
+    for(i = low -> high){
+        arr[i] = temp[i-low]
+    }
+
+}   
+
+//Let's write the code
