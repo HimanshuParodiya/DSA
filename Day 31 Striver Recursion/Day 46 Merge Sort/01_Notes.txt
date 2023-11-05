@@ -110,3 +110,12 @@ merge(arr,low,mid,high){
 }   
 
 //Let's write the code
+
+Time Complexity 
+logN because arr is dividing by 2 again and again
+and N for merging them 
+
+so total Time Complexity is O(N x LogN)
+
+Space Complexity
+O(N) for temp
