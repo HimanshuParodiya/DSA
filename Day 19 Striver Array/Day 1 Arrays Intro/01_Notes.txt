@@ -1,0 +1,5 @@
+We have to find the longest element in the array.
+
+// We have to keep in mind that whenever we solve a problem in the interview we always have to go from a brute force approach to optimal approach don't directly jump into the optimal approach
+
+// brute force 
