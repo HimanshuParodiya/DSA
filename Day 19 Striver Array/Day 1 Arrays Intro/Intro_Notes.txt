@@ -1,0 +1,39 @@
+1) What is an array?
+Ans) Array is a Data Structure that holds similar elements(one type of data type either string or number).
+
+----------------------------------------
+// how to declare array;
+arr[]= {2,1,3,4,6};
+
+
+----------------------------------------
+// max size of an array
+inside the main function, we can define the array of max size 10^6 but globally 10^7.
+
+arr[10^7] = {};
+
+main(){
+    arr[10^6] = {};
+}
+
+
+
+----------------------------------------
+//Access each element of the array
+
+We can access each element of the array by using their indices (starting from 0 to n-1)
+
+arr[5];
+
+
+for(int i = 0; i < sizeOfArray; i++){
+    cout<<arr[i]<<" ";
+}
+
+
+
+----------------------------------------
+// Address of the array
+
+Address of the first element of the array we can't predict let's say x.
+but the next address will be x + 1 after that x + 2 contiguous memory location.
