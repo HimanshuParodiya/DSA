@@ -1,0 +1,56 @@
+1) What are the OOPs?
+
+It is the type of program and technique that works around objects.
+
+------------------------------------------
+2) What is class?
+A class is a blueprint or template for creating objects.
+
+------------------------------------------
+3) What is an object?
+Objects are instances of classes. They are individual entities with their state (attributes) and behavior (methods).
+
+With objects, our code is readable and maintainable
+
+Let's see the example object
+
+we create an object named a car, Which has its state (color, model, name) and behavior (Accelerate(), Brake(), Open/Close door()).
+
+
+
+------------------------------------------
+4) Create a class 
+
+class Car
+{
+    
+};
+
+int main()
+{
+    Car car1;
+
+    cout << "Size of car object is " << size of(car1); // 1 to make its presence compiler give it size 1.
+
+    return 0;
+}
+
+
+class Car
+{
+    char name[100];
+    int speed;
+};
+
+int main()
+{
+    Car car1;
+
+    cout << "Size of car object is " << sizeof(car1); // 104 (100 for char(1 for each) + 4 for string);
+
+    return 0;
+}
+
+
+-----------------------------------------
+4) Create a separate class 
