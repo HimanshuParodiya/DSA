@@ -53,4 +53,26 @@ int main()
 
 
 -----------------------------------------
-4) Create a separate class 
+4) Printing properties of class object
+
+We can use them using '.'
+
+class Car
+{
+    char name[100];
+    int speed;
+};
+
+int main()
+{
+    Car car1;
+    // car1.name = 'Bugatti';
+    cout << "Name of the car is " << car1.name; // note: name is private
+
+    return 0;
+}   
+
+// There are 3 Access Modifiers
+    1) Public  // Access anywhere
+    2) Private // by default (Access inside the class)
+    3) Protected // we will see later
