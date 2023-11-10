@@ -1,0 +1,9 @@
+Lower Bound 
+
+Lower Bound is the smallest index such that arr[index] >= target
+
+vector<int> arr = {2, 3, 5, 7, 8, 9};
+if target = 6
+answer = 3
+int target = 3;
+answer = 1
