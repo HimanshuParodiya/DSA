@@ -6,7 +6,7 @@ int main()
 {
 
     vector<int> arr = {2, 3, 5, 7, 8, 9};
-    int target = 3;
+    int target = 8;
 
     int start = 0;
     int end = arr.size() - 1;
@@ -14,11 +14,6 @@ int main()
     while (start <= end)
     {
         int mid = start + (end - start) / 2;
-
-        if (arr[mid] == target)
-        {
-            break;
-        }
 
         if (arr[mid] >= target)
         {
@@ -29,8 +24,10 @@ int main()
             start = mid + 1;
         }
     }
+    cout << start; // 4
 
-    cout << start;
+    int lb = lower_bound(arr.begin(), arr.end(), target) - arr.begin();
+    cout << lb; // 4
 
     return 0;
 }
