@@ -1,0 +1,12 @@
+Constructor
+
+Car car1 
+whenever we create an object first thing which calls is called Constructor.
+
+Constructor -> invoke during object creation, It has no return type
+Car car1 = car1.Car() (by Constructor)
+
+
+-----------------------------------------------
+Default Constructor
+by default, there is a Constructor.
