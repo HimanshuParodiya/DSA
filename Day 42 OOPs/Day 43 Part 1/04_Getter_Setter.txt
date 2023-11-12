@@ -1,0 +1,85 @@
+Getter and Setter
+
+
+Imagine in the below code name property of Car class is private
+
+class Car
+{
+    private:
+        string name;
+
+    public:
+        int speed;
+
+};
+
+// so in the main function we can't use it.
+
+int main(){
+    Car car1;
+    car1.name // Car::name' is private within this context
+}
+
+// So what we can do in this case? Here comes the getter and setter.
+
+//So, why don't we just change it from private to public
+// chatGPT In summary, while making variables public might seem simpler, it often sacrifices important principles of object-oriented design. Encapsulation, data integrity, flexibility, and information hiding are key benefits of using private variables with getter and setter methods. It provides a clear and controlled interface for interacting with the object, promoting maintainability and reducing potential issues.
+
+
+--------------------------------------------------------------------------------------------------------------
+Getter And Setter
+
+These are nothing but some functions inside the classes that help to access those private properties
+
+//Let's create a getter
+
+class Car
+{
+    private:
+        string name;
+
+    public:
+        int speed;
+
+    string getName(){
+        return name;
+    }
+
+    int get_speed(){
+        return speed
+    }
+};
+
+
+
+//Let's create a setter
+
+class Car
+{
+    private:
+        string name;
+
+    public:
+        int speed;
+
+    string getName(){
+        return name;
+    }
+
+    int get_speed(){
+        return speed
+    }
+    
+    void setName(string ArgumentName){
+        name =  ArgumentName
+    }
+    void setSpeed(int ArgumentSpeed){
+        name =  ArgumentSpeed
+    }
+};
+
+// Let's discuss 
+there is a variable(property) named name which is private and we want to access it but we can't access it directly. So with the help of getName, we can now access it.
+And with the set name we can manipulate it.
+
+So, That was about getter and setter.
