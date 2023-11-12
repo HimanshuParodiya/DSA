@@ -1,0 +1,11 @@
+Static and Dynamic Allocation of class object
+
+// static way
+Car car1
+
+we can also do it using dynamic allocation.
+
+Do you remember? how do we use to create a dynamic int 
+int *i = new int; // memory location heap
+
+Car *car1 = new Car;
