@@ -1,0 +1,11 @@
+Destructor
+
+Destructor is used to de-allocate the memory.
+
+when is life-cycle of the object is near the end then the Destructor is called.
+
+use ~ before the name of Destructor
+
+
+When we declare an object using static allocation Destructor is called automatically.
+But in the case of dynamic, we have to call Destructor. delete objectName;
