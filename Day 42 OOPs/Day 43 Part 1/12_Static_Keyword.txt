@@ -1,0 +1,17 @@
+Static Keyword
+
+Static doesn't belong to an object it belongs class that's why we are doing (class Car in Car::timeToComplete).
+
+We can also use it like 
+
+Car car1;
+cout<<car1.timeToComplete; // but this is not preferred
+
+So that was about static data members now let's talk about static function
+--------------------------------------------------------------------------------------------------------------------------------------
+Static functions
+
+no need to create an object 
+these function doesn't have this Keyword. because this keyword is a pointer to the current object and in static function there is no object.
+
+Static function can only access static members
