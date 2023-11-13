@@ -1,0 +1,9 @@
+Assignment Operator (=)
+
+Car car1("Bugatti", 300)
+Car car2("Supra", 280)
+
+car1 = car2 what will happen in this case 
+car1.name = car2.name
+car1.speed = car2.speed
+
