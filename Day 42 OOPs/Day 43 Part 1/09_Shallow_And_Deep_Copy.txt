@@ -1,0 +1,16 @@
+Shallow and Deep Copy
+
+
+Default Copy Constructor creates a Shallow copy.
+Let's see what a is Shallow Copy.
+
+car Type is a character of an array and car_type is declared using a pointer. so when we doing car2(car1) that mean we are passing address of car_type of car1 to car_type of car2.
+so any change in car_type of car1 will also affect the car_type of car2.
+
+
+--------------------------------------------------------------------------------------------
+so we can handle it using deep copy.
+
+The default copy Constructor creates a Shallow Copy so we will create a custom copy Constructor to make a deep copy.
+
+in the case of deep copy, we create the entire new array of char for car_type so both will have different addresses so both will not change together.
