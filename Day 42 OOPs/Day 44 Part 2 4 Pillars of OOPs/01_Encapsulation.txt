@@ -1,0 +1,23 @@
+Encapsulation
+
+What is Encapsulation?
+Encapsulation is the concept of wrapping up data members(property/state) and functions(methods/behavior) into a single unit, and that unit is called a class.
+
+
+What is a full Encapsulation class?
+Where all the data members are marked private.
+
+
+Why Encapsulation Advantages?
+We can understand it as an information/data hider.
+
+Advantages:- 1) we can hide the data or information of the class. For example, using private(now don't think about getter and setter). Security ⬆️
+             2) we can mark our class readOnly(by using private and not using setter).
+             3) we can create a reusable code(we will see how).
+             4) Helpful in Unit Testing
+
+
+---------------------------------------------
+Implementation of Encapsulation
+
+we have already worked with it in our previous lectures. but let's do it again.
