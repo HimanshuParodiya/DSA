@@ -1,0 +1,49 @@
+Inheritance
+
+What is Inheritance?
+
+Let's see the example.
+Some people say you have height like your father so the height quality is Inherited from your father.
+
+same with class. Class B will inherit some property/behavior/state/methods from class A.
+
+Let's say we have a class named Human which has the following properties (Height, Weight, Age)
+
+and we have 2 other objects male and female.
+so male and female classes will inherit the Human properties. Then we can Implement them in our way(we will see).
+
+Human class is a Parent/Super class for male
+The male/Female class is the child/Sub class for Human
+
+------------------------------------------------------------
+Syntax
+
+class Human{
+
+}
+
+class Male:access_Modifier(Private/Public) Human{
+
+}
+
+
+----------------------------------------------------------------
+
+Mode of Inheritance
+
+Public Mode:- Public properties of the Human class will also be Public in the male class(accessible to everyone).
+Protected is similar to Private(not the same) if a property is Protected we can use it inside the class and also use it inside the child class but not outside  
+
+
+Super Class(Human)          Mode                       Sub Class(Male)
+Public                    ->Public->                   Public(Can be use in Male class)
+Public                    ->Private->                  Private(Only use in Human class)
+Public                    ->Protected->                Protected(Only used in Human and male classes)
+Protected                 ->Public->                   Protected(Only used in Human and male classes)
+Protected                 ->Private->                  Private(Only use in Human class)
+Protected                 ->Private->                  Private(Only use in Human class)
+Private                   ->Public->                   Not Accessible(Only used in the Human class and can't be accessible for the male class)
+Private                   ->Protected->                Not Accessible(Only used in the Human class and can't be accessible for the male class)
+Private                   ->Private->                  Not Accessible(Only used in the Human class and can't be accessible for the male class)
+
+3452
