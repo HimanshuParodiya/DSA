@@ -40,10 +40,9 @@ Public                    ->Public->                   Public(Can be use in Male
 Public                    ->Private->                  Private(Only use in Human class)
 Public                    ->Protected->                Protected(Only used in Human and male classes)
 Protected                 ->Public->                   Protected(Only used in Human and male classes)
-Protected                 ->Private->                  Private(Only use in Human class)
-Protected                 ->Private->                  Private(Only use in Human class)
+Protected                 ->Protected->                Protected(Only used in Human and Male classes)
+Protected                 ->Private->                  Private(Only used in Human and Male classes)
 Private                   ->Public->                   Not Accessible(Only used in the Human class and can't be accessible for the male class)
 Private                   ->Protected->                Not Accessible(Only used in the Human class and can't be accessible for the male class)
 Private                   ->Private->                  Not Accessible(Only used in the Human class and can't be accessible for the male class)
 
-3452
