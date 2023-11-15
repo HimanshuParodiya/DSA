@@ -27,3 +27,14 @@ Class C is Inheritance from class B and Class B is from class A
    ⬇️
     C
 There can be more levels here we just take a-> b-> c
+
+
+////////////////////////////////////////////////////////////////// Multiple Inheritance
+Class C is Inheritance from Class B and Class A 
+
+    A       B
+    ⬇       ⬇ 
+     ↘     ↙  
+        C
+        
+There can be more levels here we just take a->c<-b
