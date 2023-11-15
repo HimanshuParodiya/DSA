@@ -50,3 +50,15 @@ D    E     F    G
 
 
 There can be more levels here we just take a->c<-b
+
+
+////////////////////////////////////////////////////////////////// Hybrid Inheritance
+It is the combination of more then 1 type of Inheritance
+Class A serves as a parent class for more than 1 class
+      
+        A     H
+     ↙     ↘  ⬇
+   B          C
+
+
+There can be more levels here we just take a->c<-b
