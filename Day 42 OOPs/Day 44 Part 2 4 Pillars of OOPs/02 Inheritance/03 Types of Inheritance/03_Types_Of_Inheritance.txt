@@ -38,3 +38,15 @@ Class C is Inheritance from Class B and Class A
         C
         
 There can be more levels here we just take a->c<-b
+
+////////////////////////////////////////////////////////////////// Hierarchical Inheritance
+Class A serves as a parent class for more than 1 class
+      
+        A
+     ↙     ↘
+   B         C
+ ↙  ↘      ↙  ↘ 
+D    E     F    G
+
+
+There can be more levels here we just take a->c<-b
