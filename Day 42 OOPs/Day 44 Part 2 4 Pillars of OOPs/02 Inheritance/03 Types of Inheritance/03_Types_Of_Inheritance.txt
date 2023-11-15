@@ -1,0 +1,17 @@
+Type of Inheritance
+
+These are the following types of Inheritance
+    1) Single Inheritance
+    2) Multi-Level Inheritance
+    3) Multiple Inheritance
+    4) Hybrid Inheritance
+    5) Hierarchical 
+
+
+
+////////////////////////////////////////////////////////////////// Single Inheritance
+Class B is Inheritance from class A 
+
+    A
+   ⬇️
+    B
