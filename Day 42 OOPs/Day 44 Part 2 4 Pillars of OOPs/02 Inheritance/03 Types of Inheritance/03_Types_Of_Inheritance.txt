@@ -15,3 +15,15 @@ Class B is Inheritance from class A
     A
    ⬇️
     B
+
+
+
+////////////////////////////////////////////////////////////////// Multi-Level Inheritance
+Class C is Inheritance from class B and Class B is from class A 
+
+    A
+   ⬇️
+    B
+   ⬇️
+    C
+There can be more levels here we just take a-> b-> c
