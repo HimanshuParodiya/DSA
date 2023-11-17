@@ -1,0 +1,20 @@
+Polymorphism
+
+Polymorphism -> Poly + Morphs 
+                Many + Forms
+
+Polymorphism means one thing existing in multiple forms.
+
+            Son
+             ⬆  
+Brother  <- Jay -> Husband
+             ⬇
+           Father
+
+Jay has multiple existing
+
+----------------------------------------------------------------------------------------
+
+There are two types of Polymorphism.
+        1) Compile Time Polymorphism
+        2) Run Time Polymorphism

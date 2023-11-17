@@ -1,0 +1,50 @@
+Compile Time Polymorphism
+
+In this type of Polymorphism, we know which thing exists in which forms during Compilation.
+
+------------------------------------------------------------
+There are two types of Compile Time Polymorphism.
+    1) Function overloading(can't create two Functions with same name)
+    2) Operator overloading(Whenever we use "+" keyword say hello)
+
+/////////////////////////////////////////////// Function overloading
+Creating same-named functions
+
+
+class A
+{
+public:
+    void sayHello()
+    {
+        cout << "Hello Jenny";
+    }
+
+    //'void A::sayHello()' cannot be overloaded
+    // void sayHello()
+    // {
+    //     cout << "Hello Jay" ;
+    // }
+
+    // With the above 2 same functions we were getting an error of 'void A::sayHello()' cannot be overloaded so
+    // What we can do is we can pass the string to the function
+
+    void sayHello(string name) // now we can access both same-named functions
+    {
+        cout << "Hello" << name ;
+    }
+};
+
+int main()
+{
+
+    A object1;
+    object1.sayHello();
+    object1.sayHello("Jay");
+    return 0;
+}
+
+
+in conclusion, just pass more arguments or change the type of the previous argument
+
+/////////////////////////////////////////////// Operator Overloading
+
