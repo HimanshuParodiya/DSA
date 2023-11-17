@@ -48,3 +48,52 @@ in conclusion, just pass more arguments or change the type of the previous argum
 
 /////////////////////////////////////////////// Operator Overloading
 
+We know that + Operator is used to add or concat string   
+But now what we want is Whenever we use + Operator it should say Hello Jay
+
+Now let's see how we can overload an Operator
+
+with + Operator, we have to do subtraction.
+
++ has 2 operants. a + b
+and ++ has 1 = a++ or ++a
+
+
+
+
+Some Operators can be overloaded in C++;
+| Category                  | Operators                                     |
+|---------------------------|-----------------------------------------------|
+| Arithmetic Operators      | +, -, *, /, %                                 |
+| Comparison Operators      | ==, !=, <, >, <=, >=                          |
+| Unary Operators           | +, -, ++, --, !, ~                            |
+| Assignment Operators      | =, +=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=   |
+| Bitwise Operators         | &, |, ^, <<, >>                               |
+| Function Call Operator    | ()                                            |
+| Subscript Operator        | []                                            |
+| Member Access Operators   | ->, ->*, .                                    |
+| Other Operators           | ',' , (), [], new, delete                     |
+
+
+Some Operators can't be overloaded in C++;
+| Operators                   |
+|-----------------------------|
+| :: (Scope resolution)       |
+| . (Member access)           |
+| .* (Pointer to member)      |
+| ?: (Conditional)            |
+| sizeof (Size of)            |
+| typeid (Type information)   |
+| const_cast                  |
+| dynamic_cast                |
+| static_cast                 |
+| reinterpret_cast            |
+| & (Address of)              |
+| , (Comma)                   |
+| ->* (Pointer to member)     |
+| new (Memory allocation)     |
+| delete (Memory deallocation)|
+| .*, ->* (Pointer to member) |
+| # (Preprocessor)            |
+
+

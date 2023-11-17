@@ -50,10 +50,12 @@
     "C_Cpp.errorSquiggles": "disabled",
     "cSpell.words": [
         "aabb",
+        "concat",
         "cout",
         "DDRD",
         "DDRDR",
         "DDRDRR",
+        "deallocation",
         "Deque",
         "DLRU",
         "DRDDRR",
