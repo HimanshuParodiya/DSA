@@ -1,0 +1,33 @@
+This is also known as Dynamic Polymorphism.
+and Compile Time Polymorphism is also known as Static Polymorphism.
+
+SomeTimes we get to know that it will exist in multiple forms.
+
+
+
+With Run Time Polymorphism we can,
+    1) Override Methods
+
+Animal{
+    public:
+    void show(){
+        cout<<"inside Animal";
+    }
+};
+
+Dog : public Animal{
+    public:
+    void speak(){ // we are overriding speak method/function
+        cout<<"inside Dog";
+    }
+}
+
+There are some rules of it.
+    i) function name should be same (speak).
+    ii) Arguments must be same.
+    iii) It will only work when we working with inheritance.
+
+
+///////////////////////when do we use it.
+
+class A has 10 methods/functions we inherit it to class B which has 2 methods of it's own and take 8 methods/function from class A. so these 2 methods are overridden 
