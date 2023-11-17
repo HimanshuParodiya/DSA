@@ -1,0 +1,46 @@
+Linked List
+
+
+-------------------------------
+1) What is a Linked List?
+It is a type of data structure that is a collection of nodes. (Node is a combination of data and address of the next node)
+A linked List is a type of linear data structure that is a collection of nodes there are lots of nodes and each node represents data and the address of next the node.
+
+
+-------------------------------
+2) Why do we need a Linked List?
+Do you remember a case with an array?
+if you create an array of size 10 can you change the size in runtime. (No)
+and in the case of the vector if we create a vector of size 5 and all elements are full in it and if we want to increase its size then it will make new storage and copy all the values in it and it is also taking time so this is not the optimal approach.
+
+
+
+So, a Linked List is a type of Dynamic data structure where we can grow and shrink our data structure/Linked List during runtime.
+    1) There is no memory wastage because we can grow and shrink it during runtime.
+    2) Easy Insertion and deletion because there is no shift needed.
+
+There are some disadvantages that we will cover while learning the linked list.
+
+
+[data, next node's address] (This address is like a pointer pointing to the next node)
+
+  Head
+   |
+[3,100] -> [5,104] -> [9,108] -> [12, Null] (This linked list is called a singly linked list)
+
+
+-------------------------------
+3) Types of the linked list?
+    i) Singly Linked List (When there is a single pointer to go to the next node and can hold data this kind of liked list is called a singly linked list).
+   ii) Doubly Linked List
+  iii) Circular Linked List
+   iv) Circular Doubly Linked List
+
+
+-------------------------------
+Creating a node containing data and the pointer(address) of the next node.
+
+Class LinkedListNode{
+    int data;
+    LinkedListNode* next;
+}
