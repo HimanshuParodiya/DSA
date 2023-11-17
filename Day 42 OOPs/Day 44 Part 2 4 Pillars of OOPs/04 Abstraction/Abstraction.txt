@@ -1,0 +1,13 @@
+Abstraction
+
+What is Abstraction?
+It is also known as Implementation Hiding. and only shows essential information.
+
+When we write an email we know that when we will click on send mail will be sent but we don't know how it will be sent. Here they are hiding the Implementation of sending mail.
+
+
+Advantages of Abstraction
+    1) only you can make changes to your data and no one else can
+    2) it makes the application secure by not allowing anyone to see the background details.
+    3) increase reusable of code.
+    4) avoid duplication of our code.
