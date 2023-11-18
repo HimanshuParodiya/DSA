@@ -27,6 +27,14 @@ void insertAtHead(Node *&head, int data) // creating a function to insert node a
     head = temp;
 }
 
+void insertAtTail(Node *&tail, int data)
+{
+    Node *temp = new Node(data); // creation of new node
+    tail->next = temp;           // current node pointing to new node
+    // tail = temp->next;           // pointing tail to new node
+    tail = temp; // pointing tail to new node (both are same above one)
+}
+
 // Traverse Linked List
 
 void printLinkedList(Node *&head)
@@ -60,9 +68,10 @@ int main()
     // cout << node1->next << endl;
 
     // head pointed to node1
-    Node *head = node1;
+    Node *head = node1; // in single node head and tail point to same point
+    Node *tail = node1; // in single node head and tail point to same point
     printLinkedList(head);
-    // insert new node
+    // insert new node at head
     insertAtHead(head, 12);
     printLinkedList(head);
     insertAtHead(head, 15);
@@ -72,5 +81,12 @@ int main()
     // new data is getting add from head
     // but if we want to add it like 10 12 15
     // we have to add it from tail
+
+    // insert new node at tail
+    insertAtTail(tail, 31);
+    printLinkedList(head);
+    insertAtTail(tail, 14);
+    printLinkedList(head);
+
     return 0;
 }
