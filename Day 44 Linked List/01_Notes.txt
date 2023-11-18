@@ -44,3 +44,31 @@ Class LinkedListNode{
     int data;
     LinkedListNode* next;
 }
+
+-------------------------------
+
+Now let's see the Insertion
+
+in the empty linked list, the head will be null 
+Node *Head = NULL;
+Then,
+Node *Head = new Node(10); now it's address pointing to null
+[10, NULL]
+
+now we want to insert another node.
+So we create a function insertAtHead
+[12, NULL] (let's say this [, ] is called temp where temp -> data is 12 and temp -> next is Null)
+
+now we want to make it 
+
+[12, 100] -> [10, NULL]
+to do that I have to remove the null pointer of 12 and point it to 10
+so we can do,
+temp -> next = head/node1
+
+now we have to remove the head from the 10's node and put it in the 12's node
+for that, I will do,
+head = temp
+
+
+this is how we inset node [12, ]
