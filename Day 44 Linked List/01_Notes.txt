@@ -95,3 +95,44 @@ next of [9] will be a point to [4] which was pointing by the next of [3] let's s
 [9] -> next = temp->next; // now next of [3](temp) is pointing to [4]
 now next of [3](temp) should point to new node[9]
 temp->next = nodeToInsert[9]
+
+
+-------------------------------------
+Deletion
+
+[1]  ->  [2]  ->  [3]  ->  [4]  ->  [5]
+
+we want to delete a node.
+
+we can do it in 2 ways.
+deleteNode(position) // traverse list and find the node with this position and delete it
+deleteNode(value) // traverse list and find the node with the same value and delete it
+
+// Let's implement it using the position
+
+let's say we want to delete [3] so what will we do is we will remove the next pointer of the previous node and connect it will the next node of the deleted node
+
+[1]  ->  [2]  x  [3]  ->  [4]  ->  [5]
+          |________________|  
+
+then we will free the memory of [3]
+
+[1]  ->  [2]  ->  [3]  ->  [4]  ->  [5]
+         prev    current    
+
+prev -> next = current -> next // with this now [2] pointing to 4
+
+
+// What if we want to delete the last node of the linked list
+
+[1]  ->  [2]  x  [3]  ->  [4]  ->  [5] -> NULL
+                          prev    current
+prev -> next = current -> next // with this now [4] pointing to NULL
+
+// What if we want to delete the first node?
+
+[1]  ->  [2]  x  [3]  ->  [4]  ->  [5] -> NULL
+head
+[1]  ->  [2]  x  [3]  ->  [4]  ->  [5] -> NULL
+        head
+now the memory of [1] will be free.

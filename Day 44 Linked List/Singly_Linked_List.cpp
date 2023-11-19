@@ -13,6 +13,17 @@ public:
         this->data = data;
         this->next = NULL;
     }
+
+    // destructor to delete the node (memory free)
+    ~Node()
+    {
+        int value = this->data; // storing the value of current node just to print what we have delete
+        if (this->next != NULL)
+        {
+            delete next;
+        }
+        cout << "Memory is free for node with data " << value << endl;
+    }
 };
 
 void insertAtHead(Node *&head, int data) // creating a function to insert node at starting (Why we took reference here because we don't want to create copy)
@@ -69,6 +80,38 @@ void insertAtPosition(Node *&tail, Node *&head, int position, int data) // takin
     newNodeToInsert->next = temp->next;
     // adding next pointer of previous node to new node
     temp->next = newNodeToInsert;
+}
+
+// deletion
+void deleteNode(int position, Node *&head)
+{
+    // handling first node deletion
+    if (position == 1)
+    {
+        Node *temp = head; // say temp to first node having head so that we can delete temp and free the memory
+        head = head->next; // pass head to next node
+        // memory free of first node
+        temp->next = NULL; // removing connection between deletion node and next node
+        delete temp;
+    }
+    else
+    {                         // handling deletion of middle or last node
+        Node *current = head; // initially pointing to head
+        Node *prev = NULL;    // initially prev is NULL what comes before head nothing so null
+
+        int currentPosition = 1;
+        while (currentPosition < position)
+        {
+            prev = current;          // incrementing prev
+            current = current->next; // incrementing current
+            currentPosition++;
+        }
+        prev->next = current->next; // with this now prev pointing to 1 after current
+
+        // deleting current
+        current->next = NULL; // removing connection between deletion node and next node
+        delete current;
+    }
 }
 
 // Traverse Linked List
@@ -145,5 +188,16 @@ int main()
     cout << "Head is " << head->data << endl;
     cout << "Tail is " << tail->data << endl;
 
+    deleteNode(1, head);
+    printLinkedList(head);
+    deleteNode(1, head);
+    printLinkedList(head);
+    deleteNode(5, head);
+    printLinkedList(head);
+    deleteNode(10, head);
+    printLinkedList(head);
+
+    cout << "Head is " << head->data << endl;
+    cout << "Tail is " << tail->data << endl;
     return 0;
 }
