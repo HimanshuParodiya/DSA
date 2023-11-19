@@ -72,3 +72,26 @@ head = temp
 
 
 this is how we inset node [12, ]
+
+-------------------------------------
+
+insert at middle
+let's say we have a linked list
+[]->[]->[]->[]
+and we want to insert 9 at 2nd position
+
+so we will do 
+                      [9]
+                     ↗   ↘ 
+[1]  ->  [2]  ->  [3]  x  [4]  ->  [5]
+                   ⬇
+[1]  ->  [2]  ->  [3] ->  [9]  ->  [4]  ->  [5]
+
+we will break the connection between 3 and 4 and now 3 will point to 9 and 9 will point to 4
+
+
+To add a node at n position so we will traverse till n - 1; 
+next of [9] will be a point to [4] which was pointing by the next of [3] let's say [3] is temp
+[9] -> next = temp->next; // now next of [3](temp) is pointing to [4]
+now next of [3](temp) should point to new node[9]
+temp->next = nodeToInsert[9]

@@ -35,6 +35,42 @@ void insertAtTail(Node *&tail, int data)
     tail = temp; // pointing tail to new node (both are same above one)
 }
 
+void insertAtPosition(Node *&tail, Node *&head, int position, int data) // taking position where we want to insert node of the data
+{
+
+    if (position == 1)
+    {
+        insertAtHead(head, data);
+        return;
+    }
+
+    // creating temp
+    Node *temp = head; // temp pointing to head
+    int currentPosition = 1;
+
+    // inserting at the end
+    if (temp->next == NULL) // checking we the last node pointing to null means it is the last node or tail
+    {
+        insertAtTail(tail, data);
+        return;
+    }
+
+    // going till position
+    while (currentPosition < position - 1)
+    {
+        temp = temp->next;
+        currentPosition++;
+    }
+
+    // creating a new node
+    Node *newNodeToInsert = new Node(data);
+
+    // adding next pointer of new node to next node
+    newNodeToInsert->next = temp->next;
+    // adding next pointer of previous node to new node
+    temp->next = newNodeToInsert;
+}
+
 // Traverse Linked List
 
 void printLinkedList(Node *&head)
@@ -76,6 +112,8 @@ int main()
     printLinkedList(head);
     insertAtHead(head, 15);
     printLinkedList(head);
+    insertAtHead(head, 13);
+    printLinkedList(head);
 
     // here we are getting output like 15 12 10
     // new data is getting add from head
@@ -87,6 +125,25 @@ int main()
     printLinkedList(head);
     insertAtTail(tail, 14);
     printLinkedList(head);
+    insertAtTail(tail, 24);
+    printLinkedList(head);
+    insertAtTail(tail, 224);
+    printLinkedList(head);
+
+    // insert new node at position
+    insertAtPosition(tail, head, 3, 1);
+    printLinkedList(head);
+    insertAtPosition(tail, head, 2, 321);
+    printLinkedList(head);
+    insertAtPosition(tail, head, 6, 4);
+    printLinkedList(head);
+    insertAtPosition(tail, head, 11, 34); // now we are adding this node to at the end but we are not implementing tail anywhere because tail is pointing to old node
+    printLinkedList(head);
+    insertAtPosition(tail, head, 1, 334);
+    printLinkedList(head);
+
+    cout << "Head is " << head->data << endl;
+    cout << "Tail is " << tail->data << endl;
 
     return 0;
 }
