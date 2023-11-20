@@ -1,0 +1,24 @@
+Doubly Linked List
+
+What is a Doubly Linked List?
+There is a change in the structure of the node.
+
+we have three elements in the node of the Doubly Linked List.
+
+[prev, data, next]
+prev pointing to the previous element/node.
+next pointing to the next element/node.
+
+NULL <- [prev, 3, next] -><- [prev, 5, next] -><- [prev, 9, next] -> NULL
+
+
+_________________________________________________
+
+// Insert Node at head
+
+ [prev, 3, next] -><- [prev, 5, next]
+ temp                   head
+
+ temp -> next = head;
+ head -> prev = temp;
+ head = temp;
