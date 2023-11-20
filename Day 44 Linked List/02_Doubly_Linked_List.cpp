@@ -56,6 +56,15 @@ void insertAtHead(Node *&head, int data)
     head = temp;
 }
 
+void insertAtTail(Node *&tail, int data)
+{
+    Node *temp = new Node(data);
+
+    tail->next = temp;
+    temp->prev = tail;
+    tail = temp;
+}
+
 int main()
 {
     Node *node1 = new Node(30);
@@ -63,6 +72,7 @@ int main()
     Node *head = node1;
     Node *tail = node1;
 
+    // insert at head
     printLinkedList(head);
     insertAtHead(head, 20);
     printLinkedList(head);
@@ -70,5 +80,13 @@ int main()
     printLinkedList(head);
     cout << getLinkedListLength(head);
 
+    // insert at tail
+
+    insertAtTail(tail, 40);
+    printLinkedList(head);
+    insertAtTail(tail, 50);
+    printLinkedList(head);
+
+    cout << getLinkedListLength(head);
     return 0;
 }
