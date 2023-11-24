@@ -24,4 +24,18 @@ _________________________________________________
  head = temp;
 _________________________________________________
 
-// Insert Node at Tail
+// Delete Node
+
+[3] <=> [5] <=> [7] -> NULL
+
+1) we want to remove [3]
+first, we will point prev of [5] to NULL for that
+Temp -> next -> prev = NULL
+
+second, we will move the head from [3] to [5]
+head = temp ->next;
+
+third, we will point next of [3] to NULL for that
+Temp -> next = NULL
+
+fourth, we will remove the memory for that particular deleted node.

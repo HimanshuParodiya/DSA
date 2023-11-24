@@ -19,6 +19,18 @@ public:
         this->prev = NULL;
         this->next = NULL;
     }
+    ~Node()
+    {
+        int val = this->data;
+
+        if (next != NULL)
+        {
+            delete next;
+            next = NULL;
+        }
+
+        cout << "Memory free for node with data " << val << endl;
+    }
 };
 
 // Traversing Linked List
@@ -118,6 +130,47 @@ void insertAtPosition(Node *&tail, Node *&head, int position, int data)
     newNodeToInsert->prev = temp;
 }
 
+// deletion
+void deleteNode(int position, Node *&head, Node *&tail)
+{
+    // handling first node deletion
+    if (position == 1)
+    {
+        Node *temp = head;       // say temp to first node having head so that we can delete temp and free the memory
+        temp->next->prev = NULL; // first, we will point prev of [5] to NULL for that
+        head = temp->next;       // second, we will move the head from [3] to [5]
+        temp->next = NULL;       // third, we will point next of [3] to NULL for that
+        delete temp;             // fourth, we will remove the memory for that particular deleted node.
+    }
+    else if (position == getLinkedListLength(head))
+    {
+        Node *temp = tail;
+        temp->prev->next = NULL;
+        tail = temp->prev;
+        temp->prev = NULL;
+        delete temp;
+    }
+    else
+    {                         // handling deletion of middle or last node
+        Node *current = head; // initially pointing to head
+        Node *prev = NULL;    // initially prev is NULL what comes before head nothing so null
+
+        int currentPosition = 1;
+        while (currentPosition < position)
+        {
+            prev = current;          // incrementing prev
+            current = current->next; // incrementing current
+            currentPosition++;
+        }
+
+        current->prev = NULL;
+        prev->next = current->next;
+        current->next = NULL;
+
+        delete current;
+    }
+}
+
 int main()
 {
     // Node *node1 = new Node(30);
@@ -154,6 +207,13 @@ int main()
     insertAtPosition(tail, head, 5, 60);
     printLinkedList(head);
 
+    cout << "Head is " << head->data << endl;
+    cout << "Tail is " << tail->data << endl;
+
+    deleteNode(1, head, tail);
+    printLinkedList(head);
+    deleteNode(5, head, tail);
+    printLinkedList(head);
     cout << "Head is " << head->data << endl;
     cout << "Tail is " << tail->data << endl;
 
