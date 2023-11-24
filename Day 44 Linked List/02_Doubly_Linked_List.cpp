@@ -47,29 +47,49 @@ int getLinkedListLength(Node *head)
     return lengthOfLinkedList;
 }
 
-void insertAtHead(Node *&head, int data)
+void insertAtHead(Node *&head, Node *&tail, int data)
 {
-    // create a node
-    Node *temp = new Node(data);
-    temp->next = head;
-    head->prev = temp;
-    head = temp;
+    if (head == NULL)
+    {
+        Node *temp = new Node(data);
+        head = temp;
+        tail = temp;
+    }
+    else
+    {
+
+        // create a node
+        Node *temp = new Node(data);
+        temp->next = head;
+        head->prev = temp;
+        head = temp;
+    }
 }
 
-void insertAtTail(Node *&tail, int data)
+void insertAtTail(Node *&head, Node *&tail, int data)
 {
-    Node *temp = new Node(data);
+    if (tail == NULL)
+    {
+        Node *temp = new Node(data);
+        tail = temp;
+        head = temp;
+    }
+    else
+    {
 
-    tail->next = temp;
-    temp->prev = tail;
-    tail = temp;
+        Node *temp = new Node(data);
+
+        tail->next = temp;
+        temp->prev = tail;
+        tail = temp;
+    }
 }
 
 void insertAtPosition(Node *&tail, Node *&head, int position, int data)
 {
     if (position == 1)
     {
-        insertAtHead(head, data);
+        insertAtHead(head, tail, data);
         return;
     }
     // creating temp
@@ -79,7 +99,7 @@ void insertAtPosition(Node *&tail, Node *&head, int position, int data)
     // inserting at the end
     if (temp->next == NULL) // checking we the last node pointing to null means it is the last node or tail
     {
-        insertAtTail(tail, data);
+        insertAtTail(head, tail, data);
         return;
     }
 
@@ -100,24 +120,29 @@ void insertAtPosition(Node *&tail, Node *&head, int position, int data)
 
 int main()
 {
-    Node *node1 = new Node(30);
+    // Node *node1 = new Node(30);
 
-    Node *head = node1;
-    Node *tail = node1;
+    // Node *head = node1;
+    // Node *tail = node1;
+
+    // now we want to start from 0 like above we have create a node with data 30 so initially head and tail is null
+    Node *head = NULL;
+    Node *tail = NULL;
+    // but now we are getting an error
 
     // insert at head
     printLinkedList(head);
-    insertAtHead(head, 20);
+    insertAtHead(head, tail, 20);
     printLinkedList(head);
-    insertAtHead(head, 10);
+    insertAtHead(head, tail, 10);
     printLinkedList(head);
     cout << getLinkedListLength(head) << endl;
 
     // insert at tail
 
-    insertAtTail(tail, 40);
+    insertAtTail(head, tail, 40);
     printLinkedList(head);
-    insertAtTail(tail, 50);
+    insertAtTail(head, tail, 50);
     printLinkedList(head);
 
     cout << getLinkedListLength(head) << endl;
@@ -126,7 +151,11 @@ int main()
 
     insertAtPosition(tail, head, 1, 0);
     printLinkedList(head);
-    insertAtPosition(tail, head, 7, 0);
+    insertAtPosition(tail, head, 5, 60);
     printLinkedList(head);
+
+    cout << "Head is " << head->data << endl;
+    cout << "Tail is " << tail->data << endl;
+
     return 0;
 }
