@@ -1,0 +1,27 @@
+Circular Linked List
+
+
+1) What is a Circular Linked List?
+// in singly Linked List 
+[3] -> [5] -> [6] -> NULL
+
+
+// in Circular Linked List 
+    [3] -> [5] -> [6] 
+    ⬆_____________⬇
+
+In a Circular Linked List, there is no need for a head we need a tail only.
+
+-----------------------------
+// Insert the Node
+Case 1) Empty List where the tail will be NULL
+For that,
+First, we will create a new Node.
+Node *temp = new Node(data) 
+
+Second, we will point its tail to itself.
+tail = temp
+
+Third, we will point the pointer to it  
+temp->next = temp
+
