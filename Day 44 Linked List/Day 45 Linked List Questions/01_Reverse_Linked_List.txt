@@ -1,0 +1,76 @@
+Reverse A Linked List
+
+we have,
+[3] -> [6] -> [7] -> [8] -> NULL
+head  forward
+we have to make it 
+[8] -> [7] -> [6] -> [3] -> NULL
+head
+we can solve it using two methods 
+1) Iterative Approach 
+2) Recursive Approach
+
+1) -----------------------------------------------------------
+Intuition / Approach 1 
+
+NULL <- [3] <- [6] <- [7] <- [8]
+                             head
+
+let's say 3 is current
+and Node *prev = NULL 
+and Node *current = head // representing first node [3]
+
+now we want whatever my current node I want to point it back
+
+First, we have to forward the current to the next node then we will reverse the pointer because if first, we reverse the node then we can't access the next node.
+
+1st forward = current -> next
+now we can reverse the [3] pointer
+
+2nd current -> next = prev
+
+3rd current will go forward [6] prev = current
+
+4th prev will become [3] instead of NULL current = forward
+
+we will continue 1st, 2nd, 3rd and 4th till current != NULL 
+
+
+while(current != NULL) // current crosses the last node [8] which is NULL
+{
+    forward = current -> next;
+    current -> next = prev;
+    prev = current;
+    current = forward;
+}
+
+
+2) ----------------------------------------------------
+Recursive Approach
+
+
+// recursive approach 
+void reverseLinkedList(ListNode* &head, ListNode* current, ListNode* prev){
+    // base case 
+    if(current == NULL){
+        head = prev;
+        return ;
+    }
+
+    ListNode* forward =  current -> next;
+    reverseLinkedList(head, forward, current); // because next time prev = current; and current = forward;
+    current->next = prev;
+}
+
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(head == NULL || head->next == NULL) return head; // is list is empty or there is only 1 node
+        ListNode* current = head; 
+        ListNode* prev = NULL;
+        reverseLinkedList(head, current, prev);
+        return head;
+    }
+
+};
