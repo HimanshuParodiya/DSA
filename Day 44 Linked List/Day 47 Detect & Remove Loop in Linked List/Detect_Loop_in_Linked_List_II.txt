@@ -1,0 +1,15 @@
+// Floyd's Cycle Detection Algorithm
+
+
+// While traversing a linked list if both pointers slow and fast meet that means the loop is present in that linked list.
+there will be 2 pointers fast and slow 
+
+fast will cover 2 nodes at once and slow will cover 1 node at once.
+fast will keep traversing until it points to the node which is pointed by the slow pointer.
+
+so there can be 2 cases while traversing fast and slow
+
+First, fast reached to null which means there is no loop. (fast = NULL)
+Second, fast points to the node which is also pointed by slow pointer. (fast == slow)
+
+this algo is used to check if given linked list is cyclic or not

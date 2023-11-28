@@ -65,29 +65,35 @@ void printLinkedList(Node *&head)
 
 /// this is main code detect loop before that is singly linked list code
 
-bool detectLoop(Node *head)
+Node *floydDetectLoop(Node *head)
 {
-    if (head == NULL) // check for empty list
+    if (head == NULL)
     {
-        return false; // there is no loop
+        return NULL;
     }
 
-    map<Node *, bool> visited;
+    Node *slow = head;
+    Node *fast = head;
 
-    Node *temp = head;
-    while (temp != NULL)
+    while (slow != NULL && fast != NULL)
     {
-        if (visited[temp] == true) // this is cycle looping point
+        fast = fast->next;
+
+        if (fast != NULL)
         {
-            cout << "Loop present at " << temp->data << endl;
-            return true;
+            fast = fast->next;
         }
-        // if cycle is not present then go to next node and mark it true
-        visited[temp] = true; // mark true to visited node
-        temp = temp->next;    // going to next node
+
+        slow = slow->next;
+
+        if (slow == fast)
+        {
+            cout << "Cycle present at " << slow->data << endl;
+            return slow;
+        }
     }
 
-    return false; // if non-cycle
+    return NULL;
 }
 
 int main()
@@ -120,7 +126,7 @@ int main()
     cout << "Head is " << head->data << endl;
     cout << "Tail is " << tail->data << endl;
 
-    if (detectLoop(head))
+    if (floydDetectLoop(head) != NULL)
     {
         cout << "Cycle present";
     }
@@ -132,6 +138,4 @@ int main()
 }
 
 // Time complexity is O(n)
-// and space complexity is O(n) // due to map
-
-// can we make space complexity O(1)
+// and space complexity is O(1)
