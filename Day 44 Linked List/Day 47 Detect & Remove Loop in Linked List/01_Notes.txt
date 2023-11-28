@@ -1,0 +1,37 @@
+Detect & Remove Loop in Linked List
+
+
+-------------------------------------
+this one question is divided into 3 parts or it can be asked in 3 ways
+
+1) Detect Cycle in Linked List.
+2) Remove Cycle in Linked List.
+3) Give the beginning/start node of the loop in the Linked List.
+
+
+2->3->4->5->6->7
+         ⬆     ⬇ 
+         10 ⬅ 9
+
+there is a loop in a linked list.
+1) They can ask us to return the first node of loop 5.
+2) Break the loop and connect 10 to null.
+3) They can ask if is there any loop in a linked list.
+
+---------------------------------------
+Approach/Intuition
+
+
+2->3->4->5->6->7
+         ⬆     ⬇ 
+         10 ⬅ 9
+
+head = 2
+
+1) Detect Cycle (return true or false)
+
+1st Approach to create a map for visited or not
+
+map<Node*, bool> visited
+set every node to false and while traversing mark each node to true.
+and if the next node is true that means there is a loop.
