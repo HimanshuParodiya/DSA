@@ -130,6 +130,28 @@ void deleteNode(Node *&tail, int value)
     }
 }
 
+bool isCircularList(Node *head)
+{
+    // empty list
+    if (head == NULL)
+    {
+        return true;
+    }
+
+    Node *temp = head->next;
+
+    while (temp != NULL && temp != head)
+    {
+        temp = temp->next;
+    }
+    if (temp == head)
+    {
+        return true;
+    }
+
+    return false;
+}
+
 int main()
 {
     // Node *node1 = new Node(5);
@@ -152,15 +174,34 @@ int main()
     // printLinkedList(tail);
 
     // now we if linked list consist 1 node so we are trying to delete it.
-    Node *tail = NULL;
+    // Node *tail = NULL;
 
-    insertNode(tail, 5, 3);
-    printLinkedList(tail);
+    // insertNode(tail, 5, 3);
+    // printLinkedList(tail);
 
-    deleteNode(tail, 3);
-    printLinkedList(tail);
+    // deleteNode(tail, 3);
+    // printLinkedList(tail);
 
     // when we are deleting single node we are getting error because tail, prev and current everything pointing on that single node and then we are deleting it then we are printing it using tail which is raising an error of segmentation fault
     // so now we will create a case for deleting node when there is only 1 node in linked list
+
+    // now we are solving for problem isCircular linked list or not
+    Node *tail = NULL;
+    insertNode(tail, 5, 3);
+    printLinkedList(tail);
+    insertNode(tail, 3, 6); // search for 3 in linked list and insert 6 there
+    printLinkedList(tail);
+    insertNode(tail, 6, 9); // search for 6 in linked list and insert 9 there
+    printLinkedList(tail);
+
+    if (isCircularList(tail))
+    {
+        cout << "This is Circular linked list" << endl;
+    }
+    else
+    {
+        cout << "This is not a Circular linked list" << endl;
+    }
+
     return 0;
 }

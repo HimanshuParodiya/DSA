@@ -1,0 +1,43 @@
+Is Circular linked list?
+
+we have to check if the given array is a Circular Linked List or not.
+
+---------------------------------------
+Approach 
+
+we can check it by traversing the Linked List. when the loop comes back to the starting node that means it is a circular linked list. 
+
+
+//1) Empty list 
+if(head == NULL){
+    return true;
+}
+
+//2) 1 node 
+if(head->next == NULL){
+
+}
+
+//3) when there are more than 1 node
+Node* temp = head->next // pointing to head
+non-circular case node will point to NULL
+circular case pointer will point to the same node
+
+while(non-circular && circular){
+    
+}
+
+while(temp!=NULL && temp!=head){
+    temp = temp->next;
+}
+
+if(temp == NULL){ // non-circular
+    return false;
+}
+
+if(temp == head){ // Circular
+    return true;
+}
+
+
+the solution is at day 44 file 03
