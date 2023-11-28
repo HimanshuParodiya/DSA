@@ -1,0 +1,41 @@
+Reverse Linked List In K Order
+
+
+// Here we have a linked list 
+
+linkedList = 2 4 5 7 9
+k = 2
+
+so we have to Reverse nodes in pairs of 2
+---------------------------------------------
+// Approach Recursion
+
+Linked List = 3 7 8 11 17 2
+k = 2;
+
+let's reverse 1st k group after that recursion will take care of it.
+
+// solving 1st k group 
+Iterative Approach (count<k)
+
+head->next = recursive call output
+
+return the head to the reversed linked list ====== return prev
+
+
+----> Let's understand with an example
+
+5 7 3 8
+
+head and current is at 5
+prev = null
+
+for 1st k group, it will become
+
+7 5 3 8
+
+now prev = 7 
+current = 3
+head = 5
+
+so head -> recursive call   
