@@ -1,0 +1,67 @@
+Starting Node Of Loop
+
+We have a linked List with a loop and we have to return the Starting node of the loop.
+
+2->3->4->5->6->7
+         ⬆     ⬇ 
+         10 ⬅ 9
+
+in the above-linked list, the starting node of the loop is 5.
+
+---------------------------------------------
+Approach
+(We can also use the map approach by marking visited or not)
+First, Apply the Floyd Cycle Detection algorithm and find the point of intersection.
+Second, Again point slow to head.
+Third, slow and fast will cover 1 node at once.
+now fast and slow pointers will meet again.
+
+
+2->5 = A start to start point of loop
+5->7 = B where slow and fast will meet
+5->5 = C complete loop
+
+as we know,
+equation = distance by fast pointer = 2 distance by slow pointer
+
+for fast pointer
+A + x.C + B Here, x is the number of times C traverses C Loop.
+
+for slow pointer
+2 x (A + y.C + B) Here, y is the number of times C traverses C Loop.
+
+putting the value of slow and fast in the above equation.
+
+A + x.C + B = 2 x (A + y.C + B)
+
+A + x.C + B = 2A + 2y.C + 2B
+
+C(x-2y) = A + B
+
+let say x-2y is k 
+
+A + B = k times C
+
+now listen carefully,
+         A     B
+2->3->4->5->6->7
+        C⬆     ⬇ 
+         10 ⬅ 9
+
+A = A is a point where the loop is starting
+B = B is a point where slow and fast meets
+C = C is a complete circle of loop
+
+and we have the formula,
+A + B = k time C
+
+so if 1st time fast and slow meets at B
+and to reach C it requires A
+
+because C - B = A
+
+so what we will do to find the starting point of the loop is 
+
+First, Apply the Floyd Cycle Detection algorithm and find the point of intersection.
+Second, Again point slow to head.
+Third, slow and fast will cover 1 node at once.
