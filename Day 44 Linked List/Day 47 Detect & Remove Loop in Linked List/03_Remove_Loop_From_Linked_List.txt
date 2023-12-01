@@ -1,0 +1,17 @@
+Remove Loop From Linked List.
+
+In this problem, we have a linked list that also has a loop in it.
+
+2->3->4->5->6->7
+         ⬆     ⬇ 
+         10 ⬅ 9
+
+And we have to remove the loop.
+
+So what we can do is we will find the starting node(let's say A) of the loop in the linked list and then the previous node of the starting node will be pointed to NULL.
+
+2->3->4->5->6->7
+               ⬇ 
+ NULL ⬅ 10 ⬅ 9
+
+  we were successfully able to break the loop.
