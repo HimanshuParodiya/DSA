@@ -1,0 +1,8 @@
+Traverse a linked list
+
+2 -> 3 -> 1 -> 8 -> NULL
+
+
+Note:- Never change the head. Because if we change the head from 2 to 3 we will never be able to get 2
+
+point head by temp and keep moving temp and cout<<temp->data while temp != NULL 
