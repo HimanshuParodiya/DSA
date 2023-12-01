@@ -1,0 +1,7 @@
+Array To Linked List
+
+we have the array,
+arr[] = {2, 1, 3, 8};
+
+we need to remember our head 
+
