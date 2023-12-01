@@ -1,0 +1,61 @@
+Class and struct
+-----------------------------------
+Before going to class and struct
+
+Let's understand this
+
+int n = 2
+int* y = &n;
+cout<<y;
+
+here 2 was int and,
+int* y is pointing to its address and we use int* because the data type of 2 is int.
+
+but when we talk about a linked list in each node we have data and a pointer pointing to the next node.
+how we can point a box containing data and pointer, so what type of data type is. This is where we have to define a self-defined data type.
+
+Struct Node{
+    int data;
+    Node* next;
+
+    Node* (data1){
+        data = data1;
+        next = NULL;
+    }
+}
+
+Node* node1 = new Node(5);
+
+so this is how a self-defined data type defined
+
+same with class 
+
+Class Node{
+    int data;
+    Node* next;
+
+    Node* (data1){
+        data = data1;
+        next = NULL;
+    }
+}
+
+differences between struct and class are struct doesn't give us the power of OOPs.
+
+---------------------------------------------------
+
+
+What is the memory space used in it?
+
+        for 32-bit                          for 64-bit
+        int -> 4 bytes                      int -> 4 bytes             
+        * -> 4 bytes                        * -> 8 bytes
+        -------------                       ------------
+total  =  8 bytes                              12 bytes
+
+so depending on the system memory usage is different.
+
+
+
+
+

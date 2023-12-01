@@ -1,0 +1,44 @@
+Introduction to LinkedList | Traversal | Length | Search an Element
+
+--------------------------------------------
+1) What is a Linked List?
+We have already seen some data structures store the values like the array.
+
+int arr[4] = {1 2 3 4};
+
+can we add 5 in this array NO! We can't because the size of the array is fixed(4).
+
+
+--------------------------------------------
+i) Where is the array stored in memory?
+
+Array stored in heap memory in contiguous location.
+Due to its contiguous location array is easy to traverse index vise. 
+
+However, we cannot increase or decrease the size of the array.
+
+This is where a linked list which is a data structure comes into play because in the linked list we can increase or decrease the size.
+
+---------------------------------------------
+
+int arr[3] = {1,2,3};
+int means arr is storing the integers.
+
+double arr[3] = {1,2,3};
+int means arr is storing the doubles.
+
+
+The Linked List is not in a contiguous location and their size can increase/decrease in any movement.
+That's why we can't access them using the index.
+
+----------------------------------------------
+In the linked list each node contains data and the next.
+The starting node of the linked list is called the head and the end node is called the tail and the tail points to NULL.
+
+----------------------------------------------
+2) Where does Linked List Used?
+it is used in stacks and queues
+in the real-life browser is an example of a linked list.
+
+When we search for something on the browser -> google.com -> takeUForward.org -> AToZ -> course 
+now when we click on to prev <- button we go back -> button for the next so is it the example of a linked list?   
