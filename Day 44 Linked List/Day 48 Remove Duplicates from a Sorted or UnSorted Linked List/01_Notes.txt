@@ -1,0 +1,27 @@
+Remove Duplicates from a Sorted/Unsorted Linked List
+
+This problem comes in two types 
+1) Remove Duplicates from Sorted Linked List
+2) Remove Duplicates from Unsorted Linked List
+
+
+----------------------------------------------
+Let's see the first problem
+1) Remove Duplicates from the Sorted Linked List.
+
+Given Linked list is  1 -> 2 -> 3 -> 3 -> 3 -> 3 -> 4
+
+Output linked list  = 1 -> 2 -> 3 -> 4
+
+--- Approach
+
+Let's say we have 
+1 2 2 3
+
+current and the head is pointing to 1
+
+if the first node is not equal to the second node then go to the next node 
+But if the second node is equal to the third node, remove the third node and point it to the fourth node
+
+when First != Second, then current = current->next.
+when First == Second, then current->next = current->next->next and delete the duplicate node.
