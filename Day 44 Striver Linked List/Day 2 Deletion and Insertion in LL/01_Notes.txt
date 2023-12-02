@@ -1,0 +1,4 @@
+Deletion of head
+
+-----------------------
+We will write a function which will return new head
