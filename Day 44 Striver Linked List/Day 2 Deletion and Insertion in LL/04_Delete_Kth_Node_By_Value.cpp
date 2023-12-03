@@ -40,27 +40,26 @@ void printLinkedList(Node *&head)
     cout << endl;
 }
 
-Node *removeKthNode(Node *&head, int k)
+Node *removeKthNode(Node *&head, int el)
 {
     if (head == NULL) // if linked list is empty or there is only 1 node
     {
         return NULL;
     }
-    if (k == 1) // head deletion
+    if (head->data == el) // head deletion
     {
         Node *temp = head;
         head = head->next;
         delete temp;
         return head;
     }
-    int count = 0;
+
     Node *temp = head; // storing the head
     Node *prev = NULL; // storing the head
     while (temp != NULL)
     {
         cout << "temp data " << temp->data << endl;
-        count++;
-        if (count == k)
+        if (temp->data == el)
         {
             Node *toDelete = temp;
             prev->next = prev->next->next;
@@ -75,10 +74,10 @@ Node *removeKthNode(Node *&head, int k)
 
 int main()
 {
-    vector<int> arr = {12, 5, 8, 7};
+    vector<int> arr = {2, 1, 3, 8, 5, 7, 9};
     Node *head = convertArr2LL(arr);
     printLinkedList(head);
-    removeKthNode(head, 4);
+    removeKthNode(head, 5);
     printLinkedList(head);
     return 0;
 }
