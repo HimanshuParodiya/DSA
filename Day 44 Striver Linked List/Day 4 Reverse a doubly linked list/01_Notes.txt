@@ -1,0 +1,22 @@
+Reverse a Doubly linked list
+
+we have to Reverse the doubly linked list which has two pointers next and prev 
+
+---------------------------------------
+// 1 Brute force Approach
+
+Null <- 1 <=> 2 <=> 3 <=> 4 <=> 5 <=>
+so the first solution that comes to my mind is will swap 5 with 1, 4 with 2 and 3 with 3 
+
+we will take a stack data structure (which is a last-in fast-out data structure)
+
+the head is at a temp.
+
+we will traverse the list and put each node in the stack
+
+the stack will contain 5 4 3 2 1 (1 comes 1st and 5 comes last in the stack)
+
+now when the temp reaches null 
+
+again temp will point to the head and we will take out the top element and replace it with head node data
+
