@@ -1,0 +1,118 @@
+Sort 0s, 1s and 2s in the linked list Optimized
+
+--------------------------------------------
+What if the interviewer says that data replacement is not allowed?
+now if we can change the data what will we change. so we will change the links.
+
+
+1 -> 0 -> 2 -> 1 -> 2 -> NULL
+
+can we create 3 linked list 
+one for 0s
+second for 1s
+and third for 2s
+
+then we will merge them 
+
+---create the linked list for each
+
+0s = 0
+1s = 1 -> 1
+2s = 2 -> 2 
+
+now merge them
+
+0 -> 1 -> 1 -> 2 -> 2 -> NULL;
+
+
+What is the concept hiding in this question? 
+here we gonna use the dummy node
+[d] = dummy node
+
+0s = [d] -> 0
+1s = [d] -> 1 -> 1
+2s = [d] -> 2 -> 2 
+
+all the nodes are starting from the dummy node. 
+Why are we using a dummy node when things are looking fine?
+-----------------------------------------
+
+explain code step by step
+
+1)
+Node * zeroHead = new Node(-1);
+Node * zeroTail = zeroHead;
+Node * oneHead = new Node(-1);
+Node * oneTail = zeroHead;
+Node * twoHead = new Node(-1); 
+Node * twoTail = zeroHead;
+
+zeroHead->[d]<-zeroTail
+oneHead->[d]<-oneTail
+twoHead->[d]<-twoTail
+
+now dummy node is pointed by head and tail 
+
+2)
+
+void insertAtTail(Node* &tail, Node* currentNode ){
+    tail->next = currentNode;
+    tail = currentNode;
+}
+
+Node* currentNode = head;
+
+// create separate list for 0s, 1s and 2s.
+while(currentNode != NULL){
+    int value = currentNode->data; // storing the value of currentNode to value variable 
+    if(value == 0){
+        insertAtTail(zeroTail,currentNode); // we create a function that will insert the current node to the tail of the linked list containing all the 0s.  
+    }else if (value == 1){
+        insertAtTail(oneTail, currentNode); // same but linked list which containing 1s
+    }else if (value == 2){
+        insertAtTail(twoTail, currentNode); // same but linked list which containing 2s
+    }
+    currentNode = currentNode->next;
+}
+
+zeroHead->[d] -> 0 <-zeroTail
+oneHead->[d] -> 1 -> 1 <-oneTail
+twoHead->[d] -> 2 -> 2  <-twoTail
+
+3) Merge
+
+zeroTail -> next = oneHead->next (zeroTail is not pointing to the dummy node it is pointing to the first 1)
+oneTail -> next = twoHead->next (oneTail is not pointing to the dummy node it is pointing to the first 2)
+twoTail -> next = NULL (tail of 2s pointing to NULL)
+
+// But there can be an issue if there are no 1s and LL only contains 0s and 2s
+
+so we have to use 1 if_condition
+
+if(oneHead->next != NULL){ when there is 1 in LL (it could be 0, 1 and 2)
+    zeroTail->next = oneHead->next;
+}else{ when there is no 1
+    zeroTail->next = twoHead->next;
+}
+
+now linked list become 
+
+zeroHead->[d] -> 0 -> 1 -> 1 -> 2 -> 2 -> NULL
+                      ⬆         ⬆ 
+                  oneHead    twoHead 
+
+but zeroHead, oneHead, and twoHead are still pointing to some nodes so we will delete them
+
+also the head is pointing to zeroHead so we also have to transfer the head to 0
+
+
+    oneTail->next = twoHead->next;
+    twoTail->next = NULL;
+
+    // setup head
+    head = zeroHead->next;
+
+    // delete dummy nodes
+    delete zeroHead;
+    delete oneHead;
+    delete twoHead;
