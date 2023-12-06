@@ -1,0 +1,26 @@
+Merge Two Sorted Linked List
+--------------------------------------------
+
+we have given 2 sorted linked list
+
+inputs
+LL1 = 1 -> 4 -> 5 -> NULL
+LL2 = 2 -> 3 -> 5 -> NULL
+
+Output
+LL = 1 -> 2 -> 3 -> 4 -> 5 -> 5 -> NULL
+
+
+--------------------------------------------
+Approach 
+
+case 1
+    When LL is empty 
+        if(head == NULL){
+            return []
+        }
+
+now we will check if the LL2 element is the fitting fit between the current and next node of LL1
+if yes then put that element in LL1 
+if no then go to iterate the LL1's next node
+
