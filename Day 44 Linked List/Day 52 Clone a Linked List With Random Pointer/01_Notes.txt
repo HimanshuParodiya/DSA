@@ -1,0 +1,47 @@
+Clone a linked list with a random pointer
+
+
+We have a linked list
+
+[1] -> [2] -> [3] -> [4] -> [5] -> NULL
+
+we have that each node consists of Data and a pointer to the next node 
+
+Node{
+    int data;
+    Node* next;
+}
+
+--But In this question, they modify the structure of the linked list
+
+Now each node consists of data, a pointer to the next node and another pointer to the random node
+Node{
+    int data;
+    Node* next;
+    Node* random;
+}
+
+
+now we have to clone this linked list
+  _____________        ______
+ |             |      |      |
+[1] -> [2] -> [3] -> [4] -> [5] -> NULL
+ |     | |     |______|      |
+ |_____| |___________________|
+
+------------------------------------------
+Intuition
+Approach 1
+First, Create a clone list (using the next pointer of the original List )(We will create a temp and copy it while traversing)
+now we have copied the random pointers
+Second, To copy random pointers we will go to the original LL first node and check where its random pointer pointing then we will come to the cloned LL and point the random pointer to the same node like an original linked list
+
+here we will create 2 loops 
+so the time complexity will be O(n2)
+
+// can we solve it in O(n) ?
+
+------------------------------------------
+Intuition
+Approach 2
+
