@@ -1,0 +1,219 @@
+Add Two number of the linked list 
+
+---------------------------------------------
+This question can be asked in two ways
+1) Add two numbers represent by the linked list
+2) Add 1 to a number represented by the linked list
+
+
+input = 3 -> 4 -> NULL
+        2 -> 3 -> 0 -> NULL
+
+Output should be 
+  + 3 4
+  2 3 0
+--------
+  2 6 4 <--- answer
+ --------
+
+
+// 1st Approach 
+
+input = 4 -> 5 -> NULL
+        3 -> 4 -> 5 -> NULL
+
+1) We have to add from the right side 
+now how will we add from last node to head because we can traverse list from head to tail
+so for that we can reverse the linked list so tail will become head and head will become tail.
+
+ 5 -> 4 -> NULL
+ 5 -> 4 -> 3 -> NULL
+
+2) now we will add them
+
+result = 0 -> 9 -> 3 -> NULL
+
+now we will reverse the result  
+
+Output = 3 -> 9 -> 0 -> NULL
+
+
+
+class Solution 
+{
+    private:
+    ListNode* reverseList(ListNode* head){
+        ListNode* = current  = head;
+        ListNode* = prev = NULL;
+        ListNode* = next = NULL;
+
+        while(current != NULL){
+            next = current -> next;
+            current -> next = perv;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
+    void insertAtTail(ListNode* head, ListNode* tail , ListNode* val){
+        ListNode* temp = new ListNode(val);
+        if(head == NULL){
+            // if empty 
+            head = temp;
+            tail = temp;
+        }else{
+            tail -> next = temp;
+            tail = temp; 
+        }
+    }
+
+    private:
+    ListNode* add(ListNode* first, ListNode* second){
+        int carry = 0;
+        
+        ListNode* ansHead = NULL;
+        ListNode* ansTail = NULL;
+
+
+        while(first!= NULL && second != NULL){
+            int sum = carry + first->val + second->val;
+
+            int digit = sum%10;
+
+            // create node and add in answer list
+            insertAtTail(ansHead, ansTail, digit)
+
+            carry = sum/10;
+            first = first->next;
+            second = second->next;
+        }
+
+        while(first!= NULL){
+            int sum = carry + first -> val;
+              int digit = sum%10;
+
+            // create node and add in answer list
+            insertAtTail(ansHead, ansTail, digit)
+
+            carry = sum/10;
+            first = first->next;
+        }
+        while(second!= NULL){
+            int sum = carry + second -> val;
+              int digit = sum%10;
+
+            // create node and add in answer list
+            insertAtTail(ansHead, ansTail, digit)
+
+            carry = sum/10;
+            second = second->next;
+        }
+        // when only carry remain
+
+        while(carry != 0){
+            int sum = carry;
+            int digit = sum%10;
+             // create node and add in answer list
+            insertAtTail(ansHead, ansTail, digit)
+
+            carry = sum/10;
+        }
+
+        return answer;
+    }
+
+    public:
+    ListNode*  addTwoList(ListNode* first, ListNode* second){
+        // reverse linked list
+        first = reverseList(first);
+        second = reverseList(second);
+
+        // add each node
+        ListNode* answer = add(first , second);
+
+        // reverse the answer list 
+        answer = reverseList(answer);
+
+        // return the answer
+        return answer
+
+    }
+}
+
+let's discuss the add functionality
+steps 
+1st carry = 0
+2nd find sum
+3rd find last digit by sum%10
+4th find carry by sum/10 
+
+
+initially there will be a carry variable containing 0
+
+for 1st nodes
+so we will add 0 + node1 + node2
+0 + 5 + 5 = 10
+sum = 10
+digit = sum%10 
+digit = 0
+carry = sum/10 = 1
+
+for 2nd nodes
+so we will add 0 + node1 + node2
+1 + 4 + 4 = 9
+sum = 9
+digit = sum%10 
+digit = 9
+carry = sum/10 = 0
+
+for 3rd nodes
+so we will add 0 + node1 + node2
+0 + NULL + 3 = 3 (lets say null = 0)
+sum = 3
+digit = sum%10 
+digit = 3
+carry = sum/10 = 0
+
+
+now we can remove the multiples while loop inside add
+
+private:
+    ListNode* add(ListNode* first, ListNode* second){
+        int carry = 0;
+        
+        ListNode* ansHead = NULL;
+        ListNode* ansTail = NULL;
+
+
+        while(first != NULL || second != NULL || carry != 0){
+            int val1 = 0;
+            if(first != NULL){
+                val1 = first->val;
+            }
+            int val2 = 0;
+            if(second != NULL){
+                val2 = second->val;
+            }
+            int sum = carry + val1 + val2;
+
+            int digit = sum%10;
+
+            // create node and add in answer list
+            insertAtTail(ansHead, ansTail, digit)
+
+            carry = sum/10;
+
+            if(first != NULL){
+                first = first->next;
+            }
+
+            if(second != NULL){
+                second = second->next;
+            }
+            
+        }
+
+       
+        return ansHead;
+    }
