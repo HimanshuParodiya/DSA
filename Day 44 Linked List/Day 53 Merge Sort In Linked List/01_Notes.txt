@@ -1,0 +1,26 @@
+Merge Sort In Linked List
+
+
+-------------------------------------------------------------
+We have a linked list and we have to sort without replacing the data we can only change the links it using Merge Sort
+
+input = 3 -> 5 -> 1 -> 2 -> 9 -> NULL
+
+output = 1 -> 2 -> 3 -> 5 -> 9 -> NULL
+
+
+-------------------------------------------------------------
+Approach
+
+1) find mid of the linked list
+2) Break them into 2 halves
+3) Recursively sort both halves
+4) Merge left and right sorted halves
+
+
+Time and space Complexity is O(NLogN) and O(logN) respectively
+
+
+-------------------------------------------------------------
+important question
+Why do we prefer Merge Sort in Linked List and Quick sort in an array
