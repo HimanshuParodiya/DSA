@@ -1,0 +1,30 @@
+Minimum cost to make valid string
+
+given string = "{{{}" 
+
+we can convert the { to }
+
+so we have to make it valid string.
+
+in above case we just have to convert  {{ to {} te the given string will be valid string. answer will be 1
+
+for {{}{}} answer will be 0.
+
+
+conditions 
+1) no. of open = no of clone.
+2) every close brace should have open brace before it.
+
+
+// Approach
+
+case 1 
+    if the given string size is odd then we can make it valid string.
+    then we will return -1.
+
+case 2
+
+
+
+
+

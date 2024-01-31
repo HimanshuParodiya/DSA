@@ -1,0 +1,167 @@
+Celebrity Problem
+
+problem statement 
+// A Celebrity is a person who is known to all 
+// but he doesn't know anyone at a party
+// if you go to a party of N people, find if there is a Celebrity in the party or not.
+
+// we have a NxN matrix that is used to represent the people in the party
+
+{        0  1  2
+    0   {0, 1, 0}
+    1   {0, 0, 0}
+    2   {0, 1, 0}
+}
+
+we will not check for diagonal which is 0, 0, 0,
+
+{        0  1  2
+    0   {0,  ,  }
+    1   { , 0,  }
+    2   { ,  , 0}
+}
+
+because it doesn't make any sense that 0 knows 0, 1 knows 1 and 2 knows 2
+
+now 
+
+{        0  1  2
+    0   { , 1, 0}
+    1   {0,  , 0}
+    2   {0, 1,  }
+}
+
+for 1st row 
+    0 knows 1 = 1 -> Yes
+    0 knows 2 = 0 -> No
+
+for 2nd row 
+    1 knows 0 = 0 -> No
+    1 knows 2 = 0 -> No 
+
+for 3rd row 
+    2 knows 0 = 0 -> No
+    2 knows 1 = 1 -> Yes 
+
+now 
+0 knows 1
+and 2 knows 1
+
+and 1 doesn't knows anyone
+
+means 1 is a celebrity.
+
+
+// Brute Force Approach
+
+for celebrity entire row will contain 0
+celebrity entire col will contain 1 except diagonal.
+
+for (int i = 0; i < n; i++)
+{
+    // for loop for row
+
+    // for loop for col
+}
+
+time complexity will be O(n2)
+
+
+// Optimize Approach
+
+
+|   |
+|___|
+| 2 | -> A
+|___|
+| 1 | -> B
+|___|
+| 0 |
+|___|
+
+1) put all the element in the stack
+2) while stack.size() != 1 
+    pick 2 elements/person
+    A = stack.top() , stack.pop() 
+    B = stack.top() , stack.pop() 
+   if(A knows B) then it is not celebrity now discard A and but B could be so push back B
+   if(B knows A) then it is not celebrity now discard B and but A could be so push back A
+
+
+{        0  1  2
+    0   {0, 1, 0}
+    1   {0, 0, 0}
+    2   {0, 1, 0}
+}
+
+A = 2
+B = 1
+
+if(A knows B)
+
+matrix[A][B](2nd row 1st col) = 1 means A knows B
+discard A and push back B
+
+|   |
+|___|
+| 1 |
+|___|
+| x |
+|___|
+| x |
+|___|
+| 0 |
+|___|
+
+now again pick 2 elements
+
+|   |
+|___|
+| 1 | -> A
+|___|
+| x |
+|___|
+| x |
+|___|
+| 0 | -> B
+|___|
+
+
+{        0  1  2
+    0   {0, 1, 0}
+    1   {0, 0, 0}
+    2   {0, 1, 0}
+}
+
+A = 1
+B = 0
+
+if(A knows B)
+matrix[A][B](1st row 0th col) = 0 means A doesn't knows B
+
+now if(B knows A)
+matrix[B][A](0th row 1st col) = 1 means B knows A
+discard B and push back A
+
+
+| 1 |
+|___|
+| x |
+|___|
+| x |
+|___|
+| x |
+|___|
+| x |
+|___|
+
+now stack.size() == 1 
+while loop will be break
+
+
+now the remaining single element in stack is a potential candidate to become a celebrity
+
+now we will verify that by 
+
+for celebrity entire row will contain 0 (check row all should be 0)
+celebrity entire col will contain 1 except diagonal. (check col all should be 1 except diagonal)

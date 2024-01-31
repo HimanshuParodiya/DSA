@@ -1,0 +1,67 @@
+Largest Rectangular Area in Histogram Brute Approach
+
+// we have a Histogram
+
+
+
+
+                 6
+            5   ____
+           ____|    | 
+          |    |    |      3
+  2       |    |    | 2   ____
+ ____  1  |    |    |____|    |  
+|    |____|    |    |    |    |
+|____|____|____|____|____|____|   
+
+Now we have to find the Largest Rectangular Area
+
+
+----------------------------------------------------------------
+Brute Force Approach
+
+Steps:-
+
+    1) Find a rectangle which contains 2, 1, 5, 6, 2, 3 and the area of rectangle is (l x b)
+
+    for 2 can we extend it to left, No because there is no space in left 
+    can we extend it to right, No because 1 can't contain 2
+    so the breath will be 1 
+    and area will be 2 x 1 = 2 <- ans -----------------------
+
+    for 1 can we extend it to left, Yes because 2 can contain 1
+    can we extend it to right, Yes because 5 can contain 1 now 6 can contain 1 then 2 then 3
+
+    so the breath of the 1 is 6(all bars) 
+
+    so first area will become 1 x 6 = 6 <- ans--------------------------
+
+
+    for 5 can we extend it to left, No because 1 can't contain 5 
+    can we extend it to right, Yes because 6 can contain 5
+
+    so the breath of the 5 will be 2 
+    so second area will be 5 x 2 = 10 <- ans----------------------------
+
+
+    for 6 can we extend it to left, No because 5 can't contain 6 
+    can we extend it to right, No because 2 can't contain 6
+    so the breath will be 1 
+    and area will be 6 x 1 = 6 <- ans -----------------------
+
+
+    for 2 can we extend it to left, Yes because 6 can contain 2, now 5 can also contain 2
+    can we extend it to right, Yes because 3 can contain 2
+    so the breath will be 4
+    and the are will be 2 x 4 = 8 <- ans -----------------------
+
+
+    for 3 can we extend it to left, No because 2 can't contain 3 
+    can we extend it to right, No because there is no space left
+    so the breath will be 1 
+    and area will be 3 x 1 = 3 <- ans -----------------------
+
+    now we will find the MAX ans (2, 6, 10, 6, 8, 3)
+
+
+// the time complexity for this is O(n2) so we will find the optimize solution for this.

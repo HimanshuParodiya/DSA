@@ -1,0 +1,23 @@
+Check the Linked list is palindrome or not
+
+// now we will see the optimize approach to check that given linked list is palindrome or not
+
+// Approach
+
+The given linked list is
+    1 -> 2 -> 3 -> 3 -> 2 -> 1 -> NULL 
+
+1) We will find the middle of the linked list 
+which is first 3
+
+2) Then we will reverse the linked list after the middle element 
+linked list become 
+    1 -> 2 -> 3mid -> 1 -> 2 -> 3 -> NLL 
+
+3) Now we will put 2 pointers 1st is on head and another is no mid + 1 which is 1
+and while traversing both the pointers and check if both pointers data are equal or not (now we will get if the linked list is palindrome or not)
+
+4) Now we will repeat the 2nd step (find middle element and reverse afterwards)
+
+now we have our original linked list
+    1 -> 2 -> 3 -> 3 -> 2 -> 1 -> NULL 

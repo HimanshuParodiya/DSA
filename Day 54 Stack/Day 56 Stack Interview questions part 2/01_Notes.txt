@@ -1,0 +1,61 @@
+Next Smaller Element
+
+arr[] = [2,1,4,3]
+
+
+we have to find the Smaller element for each element
+
+for 2 and in [1,4,3] the first smaller element is 1
+for 1 and in [4,3] the first smaller element is -1
+for 4 and in [3] the first smaller element is 3
+for 3 and in [] the first smaller element is -1
+
+
+// Approach 1
+
+steps 
+    we will pick 1 element and compare it will rest of the element in array
+
+  for (int i = 0; i < n; i++)
+    {
+        for (int j = i+1; j < n; j++)
+        {
+          --------------
+          --------------
+          --------------
+          --------------
+        }
+        
+    }
+
+Time complexity for this is O(n2)
+
+
+can we solve it using O(n)?
+
+-----------------------------------------------------
+// Approach 2
+
+                               <-
+we will go from right [2, 1, 4, 3]
+
+1) first, for the rightmost element the smallest will be -1;
+so we will check the top of the stack and check if the top element is small or not 
+
+if the top element is smaller than current element then pick it up myStack.push(myStack.top()) else find smaller by checking the condition while(if(myStack.top() > currentElement){myStack.pop()})
+
+
+2) second, smallest element for 4 
+
+
+
+|     |
+|_____|
+|     |
+|_____|
+|     |
+|_____|
+|     |
+|_____|
+| -1  | initially there will be -1 for the rightmost element
+|_____|

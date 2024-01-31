@@ -1,0 +1,10 @@
+Redundant Brackets
+
+A pair of brackets is said to be redundant when a sub expression is surrounded by needless or useless brackets.
+
+Example:-
+
+((a+b)) this outer () is redundant
+
+(a + (b * c)) there is no redundant
+

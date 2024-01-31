@@ -1,0 +1,3 @@
+Largest Rectangular Area in Histogram optimize Approach
+
+// now we will solve it for O(n) and for that we gonna use Stack and we gonna use the concept of next smaller element

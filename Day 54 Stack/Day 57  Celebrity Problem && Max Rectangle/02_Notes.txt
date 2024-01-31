@@ -1,0 +1,101 @@
+Max Rectangle
+
+Problem statement 
+    // we have a matrix (M) of size nXm. 
+    // we have to find the maximum area of Rectangle formed only of 1s in given matrix.
+
+M[][] = {
+
+    {0  1  1  0},
+    {1  1  1  1},
+    {1  1  1  1},
+    {1  1  0  0},
+} 
+
+The approach will be same as largest Rectangular area in histogram
+
+// Approach
+
+We gonna break this problem into pieces 
+
+first let's take 0th row
+
+0 1 1 0
+
+it's graphical representation will be 
+
+    _1_ _1_  
+_0_|___|___|_0_
+
+MAX area will be 2 
+because breath is 2 and length is 1
+
+b x l = 2
+
+
+second, take 0th and 1st row
+
+0 1 1 0
+1 1 1 1
+
+and add them
+
+1 2 2 1
+     _2_ _2_
+ _1_|   |   |_1_ 
+|___|___|___|___|
+
+max area will be 4
+
+third, take 0th, 1st and 2nd row
+
+0 1 1 0
+1 1 1 1
+1 1 1 1
+
+and add them
+
+2 3 3 2
+
+     _3_ _3_
+ _2_|   |   |_2_ 
+|   |   |   |   |
+|___|___|___|___|
+
+max area will be 8
+
+
+fourth take 0th, 1st, 2nd and 3rd row
+
+0 1 1 0
+1 1 1 1
+1 1 1 1
+1 1 0 0
+
+now add them 
+
+3 4 0 0 ( 0 because 3 and 4th col's base is 0(we can't make histogram in air))
+
+     _4_ 
+ _3_|   |   
+|   |   |   
+|   |   |   
+|___|___|_0_|_0_|
+
+max area will be 6
+
+
+so the max area for all the histogram was 8
+
+so answer is 8
+
+
+// 
+1) compute max area for 1st row
+2) for loop for every remaining row and for each row add it with upper row
+3) and if base is 0 then don't add them
+4) find the area for each 
+5) find max area 
+
+
+

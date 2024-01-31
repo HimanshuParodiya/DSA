@@ -1,0 +1,54 @@
+Introduction to Stack
+
+
+What is stack?
+1) Stack is a data structure where data is organize bottom to top order (like plates in wedding).
+
+data arrange from bottom to top but we use the data from top to bottom (LIFO = Last In First Out)
+
+|  6  |
+|_____|
+|  5  |
+|_____|
+|  4  |
+|_____|
+|  3  |
+|_____|
+|  2  |
+|_____|
+|  1  |
+|_____|
+stack 
+
+during insertion the order was = 1 2 3 4 5 6
+during remove the order is = 6 5 4 3 2 1   
+
+LIFO Order is following
+
+
+So Stack is a type of data structure which follows the LIFO concept.
+
+
+---------------------------------------------------------
+Stack operations 
+
+push = add element in stack
+pop = remove element from stack
+peek = top element in stack
+empty = check for empty stack
+and more search on cppReference
+
+
+---------------------------------------------------------
+Creation of stack
+
+stack<int> stackName;
+
+push = stackName.push(2);
+pop = stackName.pop();
+peek/top = stackName.top() to see the top element
+empty = stackName.empty() true or false
+
+
+---------------------------------------------------------
+Sometimes interviewer can ask to implement the stack

@@ -1,0 +1,1 @@
+Delete middle element from the stack

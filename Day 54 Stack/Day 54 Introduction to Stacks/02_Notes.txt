@@ -1,0 +1,69 @@
+Implementing stack functionality with its methods.
+
+We have to methods to Implement the stack 
+1) Using the Array Data Structure
+2) Using the Linked List Data Structure
+
+we gonna use Array 
+
+------------------------------------------------
+Implementing Stack using an array
+
+arr = {              }
+
+1st operation is Push
+
+so top is a index where we want to push our element.
+initially top is -1 then step by step we will push new element 1 after 1. Until our stack is not overflowing.
+
+
+So, in class stack we need top, *arr (it's size will be define in constructor) and size.
+
+// ///////////////////Processing steps for PUSH operation
+
+arr = {          } (empty)
+top = -1 (initially)
+push(22)
+
+1st we will check is there space available for 22 in arr. 
+If space is not available stack is overflow.
+If space is available then insert the element. 
+To insert element we will do top++ so top will become 0 and we did arr[top] = 22;
+
+That was Push functionality
+
+
+
+// ///////////////////Processing steps for POP operation
+
+arr = {2,          } 
+top = 0 
+pop()
+
+first we will check is there any element present in the array or not.
+if element is not present then stack will underFlow. (to check that wether element is present or not we can use top>=0)
+if element is present.
+To remove the element we will decrement the top by 1 place.
+with top--, top will become -1, so stack is empty.
+
+
+
+// ///////////////////Processing steps for EMPTY operation
+
+arr = {2,          } (empty)
+top = 0 
+empty()
+
+if top = -1 then stack is empty 
+
+
+// ///////////////////Processing steps for TOP operation
+
+arr = {2,          } (empty)
+top = 0 
+top()
+
+if(top >=0)
+if(top<size)
+
+return arr[top]

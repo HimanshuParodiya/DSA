@@ -1,0 +1,171 @@
+N Stack in an array
+
+Problem statement
+
+we have an array
+and basically, we have to implement push and pop
+
+push(X, M): Pushes an element X into the Mth stack. Returns true if the element is pushed into the stack, otherwise false.
+pop(M): Pops the top element from Mth Stack. Returns -1 if the stack is empty, otherwise, returns the popped element.
+
+Two types of queries denote these operations :
+Two types of queries denote these operations :
+
+Type 1: for push(X, M) operation.
+Type 2: for pop(M) operation.
+
+
+
+----------------------------------------
+// Approach 1)
+arr = []
+
+we have an array of size n-1 which can contain total n elements,
+and we have to implement k stacks 
+
+so we will divide this array into k parts
+
+so each part = n/k
+
+total stack = S1, S2, S3, S4,..... Sk
+
+so each stack will take 1 part (n/k)
+
+now we can fulfill the requirement like
+
+push 5 in s1 stack 
+push(5,1)
+
+     S1             S2             S3             S4        ........Sk 
+{[ 5,         ],[           ],[           ],[           ], ...[             ]}
+
+push 6 in s1 stack 
+push(6,1)
+
+     S1             S2             S3             S4        ........Sk 
+{[ 5, 6       ],[           ],[           ],[           ], ...[             ]}
+
+pop in the s1 stack 
+push(1)
+
+     S1             S2             S3             S4        ........Sk 
+{[ 5,         ],[           ],[           ],[           ], ...[             ]}
+
+
+this was our first Approach
+
+but it has a drawback that it doesn't optimize the space efficiently
+because if we are pushing in S3 and S3 is now full and now if we push an element we will get an error of stack overflow
+even though we have stack space in S1 and S2 so that is why this is not optimizing the space efficiently.
+
+so this is not a good Approach
+
+
+
+----------------------------------------
+// Approach 2)
+
+let's say we have an array of sizes 9
+
+  1  2  3  4  5  6  7  8  9
+{ 1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+let's say we have to implement 3 stacks
+
+we will create the top for each part that will keep their tracks
+
+we also need 2 things here 
+ i) Array of Top (Top[]) and the size of the Top[] will be k, And this representing the top element of the stack
+ ii) Now we also required Next array (next[]) and this next[] can do 2 things 
+    a) Point to the next element after the top of the stack 
+        ex = |___|
+             |_5_|
+             |_3_|
+             |_2_|
+             here the top is 5 so next[] will point element after the top which is 3
+
+    b) Point to the next free space/block
+
+    if an array is empty then the current space will point to the next space (if the 0th index is empty it will point to the 1st index)
+
+now how would we know what next showing (point a or point b)
+for that, we will simply use if else statement 
+
+if(arr[i] != empty()){
+    then it shows a
+}else{ // if arr[i] = empty()
+    then it shows b
+}
+
+
+
+// input format 
+
+N representing no of stacks
+S represents the size of the array
+Q representing no of queries
+
+Example 
+
+N = 3;  ==  N1, N2, N3
+S = 6;  ==  Array[6]
+Q = 5;  ==  There are 5 queries
+
+1 query = push(10,1) , Push 10 in 1st stack 
+2 query = push(20,1) , Push 20 in 1st stack 
+3 query = push(30,2) , Push 30 in 2nd stack 
+4 query = pop(1) , pop from 1nd stack 
+5 query = pop(2) , pop from 2nd stack 
+
+
+arr[S] = {}
+
+
+let's create an Array for Top of size N(3)
+Top[3] = {} // Instead of creating 3 separate tops we will create the array of tops for each stack 
+
+
+let's create an Array for the next of size S(6)
+Next[6] = {}
+
+
+initially, each top will contain only -1
+
+top[3] = {-1, -1, -1};
+
+
+Next[6] = {} // next is empty (remember if(arr[i] != empty()){then it shows a}else{ // if arr[i] = empty() then it shows b})
+and here array is empty so it is showing the b means Point to the next free space/block
+and the next free space is index + 1
+next[6] = {1,2,3,4,5,-1} 
+
+
+and we also need a variable called freeSpot 
+this variable will be used to get the starting index of free space 
+initially, the free spot is 0
+
+this logic will be handled inside the constructor
+
+ now handle the queries
+
+ 1 query = Push(10, 1); x = 10 , m = 1
+
+1) find the index 
+    int index = freeSpot
+
+2) update freeSpot
+freeSpot = next[index] (next[index] pointing to the next free space/block)
+
+3) insert in array
+
+arr[index] =  x;
+
+now array contains an element next Point to the next element after topping of stack 
+so now we have to update the next
+
+4) Update next
+next[index] = top[m-1]
+
+5) Update top
+top[m-1] = index;
+top[m-1] = index;

@@ -1,0 +1,29 @@
+Valid Parentheses
+
+The parentheses are valid if they have their corresponding closing tag.
+
+
+
+// Approach
+we will put each parentheses in stack and when we will find the opposite parentheses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
